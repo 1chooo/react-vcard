@@ -10,8 +10,11 @@ import {
 } from "react-router-dom";
 import './App.css';
 import Home from "./components/Home/Home";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/SideBar";
 import Footer from "./components/Footer";
 import Preloader from "../src/components/Pre";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
 
@@ -28,16 +31,30 @@ function App() {
 	return (
 
 		<Router>
-			<Preloader load={load} />
-			<div className="App" id={load ? "no-scroll" : "scroll"}>
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="*" element={<Navigate to="/"/>} />
-				</Routes>
-				<Footer />
-			</div>
+			<main>
+				<aside>
+					<Sidebar />
+				</aside>
+				<div className="main-content">
+					<Navbar />
+					<ScrollToTop />
+					<Preloader load={load} />
+					<Home />
+					<Home />
+					<Home />
+					<div className="about" id={load ? "no-scroll" : "scroll"}>
+						<Routes>
+							<Route path="/" element={<Home />} />
+							<Route path="*" element={<Navigate to="/" />} />
+						</Routes>
+					</div>
+				</div>
+			</main>
+			<Footer />
 		</Router>
 	);
 }
 
 export default App;
+
+
