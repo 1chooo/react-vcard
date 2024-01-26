@@ -11,23 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-
-/* Footer */
-footer {
-  margin-bottom: 4rem;
-  text-align: center;
-}
-
-footer {
-  display: block;
-}
-
-p.copyright {
-  color: var(--light-gray);
-}
-
-p.siteInfo {
-  color: var(--light-gray-70);
-  font-size: var(--fs-8);
-}
