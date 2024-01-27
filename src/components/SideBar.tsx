@@ -15,7 +15,8 @@ import {
 
 function SideBar() {
     return (
-        <div className="sidebar">
+        <aside className="sidebar" data-sidebar="">
+
             <div className="sidebar-info">
                 <figure className="avatar-box">
                     <img id="profile-img" src={profileImage} alt="Hugo ChunHo Lin" width="80" />
@@ -130,7 +131,8 @@ function SideBar() {
                 </ul>
 
             </div>
-        </div>
+
+        </aside>
     );
 }
 
