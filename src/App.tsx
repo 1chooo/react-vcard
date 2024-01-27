@@ -12,6 +12,7 @@ import './App.css';
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/SideBar";
+import About from "./components/About/About";
 import Footer from "./components/Footer";
 import Preloader from "../src/components/Pre";
 import ScrollToTop from "./components/ScrollToTop";
@@ -29,29 +30,26 @@ function App() {
 	}, []);
 
 	return (
-
 		<Router>
-			<main>
-				<aside>
-					<Sidebar />
-				</aside>
-				<div className="main-content">
-					<Navbar />
-					<ScrollToTop />
-					<Preloader load={load} />
-					<Home />
-					<Home />
-					<Home />
-					<div className="about" id={load ? "no-scroll" : "scroll"}>
-						<Routes>
-							<Route path="/" element={<Home />} />
-							<Route path="*" element={<Navigate to="/" />} />
-						</Routes>
-					</div>
-				</div>
-			</main>
+
+			<About />
 			<Footer />
 		</Router>
+		// <Router>
+		// 		<div className="main-content">
+		// 			{/* <Navbar />
+		// 			<ScrollToTop />
+		// 			<Preloader load={load} />
+		// 			<About /> */}
+		// 			<div className="" id={load ? "no-scroll" : "scroll"}>
+		// 				<Routes>
+		// 					<Route path="/" element={<About />} />
+		// 					<Route path="*" element={<Navigate to="/" />} />
+		// 				</Routes>
+		// 			</div>
+		// 		</div>
+		// 	<Footer />
+		// </Router>
 	);
 }
 
