@@ -1,5 +1,5 @@
 import React from "react";
-import profileImage from "../Assets/images/profile.jpg";
+import profileImage from "../../Assets/images/profile.jpg";
 import {
     SiGithub,
 } from "react-icons/si";
@@ -30,13 +30,13 @@ import {
     TbPhoneCalling
 } from "react-icons/tb";
 
-
+import SideBarInfo from "./SideBarInfo";
 
 function SideBar() {
     return (
         <aside className="sidebar" data-sidebar="">
 
-            <div className="sidebar-info">
+            {/* <div className="sidebar-info">
                 <figure className="avatar-box">
                     <img id="profile-img" src={profileImage} alt="Hugo ChunHo Lin" width="80" />
                 </figure>
@@ -48,9 +48,10 @@ function SideBar() {
                 </div>
                 <button className="info_more-btn" data-sidebar-btn>
                     <span>Show Contacts</span>
-                    {/* <IonIcon name="chevron-down"></IonIcon> */}
+                    <IonIcon name="chevron-down"></IonIcon>
                 </button>
-            </div>
+            </div> */}
+            <SideBarInfo />
 
             <div className="sidebar-info_more">
                 <div className="separator"></div>
