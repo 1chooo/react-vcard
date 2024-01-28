@@ -1,20 +1,6 @@
 import NavBar from "../Navbar";
-import Sidebar from "../SideBar";
-import AboutSidebar from "./AboutSideBar";
+import Sidebar from "../SideBar/SideBar";
 import React from "react";
-import profileImage from "../../Assets/images/profile.jpg";
-import { IonIcon } from "@ionic/react";
-import {
-    SiVisualstudiocode,
-    SiMacos,
-    SiVim,
-    SiLinux,
-    SiAmazonaws,
-    SiFigma,
-    SiGnubash,
-    SiGithub,
-    SiGitlab,
-} from "react-icons/si";
 
 function About() {
     return (
@@ -23,25 +9,7 @@ function About() {
             <Sidebar />
             <div className="main-content">
 
-                <nav className="navbar">
-                    <ul className="navbar-list">
-                        <li className="navbar-item">
-                            <button className="navbar-link active" data-nav-link>About</button>
-                        </li>
-                        <li className="navbar-item">
-                            <button className="navbar-link" data-nav-link>Resume</button>
-                        </li>
-                        <li className="navbar-item">
-                            <button className="navbar-link" data-nav-link>Portfolio</button>
-                        </li>
-                        <li className="navbar-item">
-                            <button className="navbar-link" data-nav-link>Blog</button>
-                        </li>
-                        <li className="navbar-item">
-                            <button className="navbar-link" data-nav-link>Contact</button>
-                        </li>
-                    </ul>
-                </nav>
+                <NavBar />
 
                 <article className="about active" data-page="about">
                     <header>
@@ -58,18 +26,18 @@ function About() {
                         </p>
 
                         <p>
-                            Hi, this is Hugo ChunHo Lin, 
-                            a 4th-year student at 
-                            <a href="https://www.ncu.edu.tw/" className="code-highlight-yellow"> National Central University (NCU)</a>, 
-                            driven by a <em><strong>genuine passion </strong></em> 
+                            Hi, this is Hugo ChunHo Lin,
+                            a 4th-year student at
+                            <a href="https://www.ncu.edu.tw/" className="code-highlight-yellow"> National Central University (NCU)</a>,
+                            driven by a <em><strong>genuine passion </strong></em>
                             for the field of <strong>Software Engineering 💻</strong>.
                         </p>
 
                         <p>
-                            I am currently preparing my application for a Master's Degree, 
-                            while simultaneously serving as a 
-                            <strong><a href="https://aws.amazon.com/tw/education/awseducate/" className="code-highlight-yellow"> Amazon Web Services (AWS) Educate</a> Cloud Ambassador -- Tech Support </strong> 
-                            and an <strong>Ex Software Engineering (SWE) Intern at <a href="https://www.pegatroncorp.com/" className="code-highlight-yellow">Pegatron</a></strong>, 
+                            I am currently preparing my application for a Master's Degree,
+                            while simultaneously serving as a
+                            <strong><a href="https://aws.amazon.com/tw/education/awseducate/" className="code-highlight-yellow"> Amazon Web Services (AWS) Educate</a> Cloud Ambassador -- Tech Support </strong>
+                            and an <strong>Ex Software Engineering (SWE) Intern at <a href="https://www.pegatroncorp.com/" className="code-highlight-yellow">Pegatron</a></strong>,
                             turning complex problems into simple, beautiful and intuitive designs.
                         </p>
 
@@ -84,6 +52,7 @@ function About() {
                 </article>
             </div>
         </main>
+
     );
 }
 
