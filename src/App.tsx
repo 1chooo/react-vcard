@@ -31,9 +31,21 @@ function App() {
 
 	return (
 		<Router>
-
-			<About />
-			<Footer />
+			<Routes>
+				<Route path="/" element={
+					<>
+						<About />
+						<Footer />
+					</>
+				} />
+				<Route path="/test" element={
+					<>
+						<About />
+						<Footer />
+					</>
+				} />
+				<Route path="*" element={<Navigate to="/" />} />
+			</Routes>
 		</Router>
 		// <Router>
 		// 		<div className="main-content">
