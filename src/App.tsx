@@ -40,14 +40,14 @@ function App() {
 							<Footer />
 						</>
 					} />
-				{/* <Route
+				<Route
 					path="/resume"
 					element={
 						<>
 							<Resume />
 							<Footer />
 						</>
-					} /> */}
+					} />
 				<Route
 					path="/contact"
 					element={
