@@ -15,6 +15,7 @@ import Resume from "./components/Resume/Resume";
 import Footer from "./components/Footer";
 import Preloader from "../src/components/Pre";
 import ScrollToTop from "./components/ScrollToTop";
+import { Document } from 'react-pdf'
 
 function App() {
 
@@ -39,7 +40,8 @@ function App() {
 							<About />
 							<Footer />
 						</>
-					} />
+					} 
+					/>
 				<Route
 					path="/resume"
 					element={
@@ -47,7 +49,8 @@ function App() {
 							<Resume />
 							<Footer />
 						</>
-					} />
+					} 
+					/>
 				<Route
 					path="/contact"
 					element={
@@ -56,30 +59,21 @@ function App() {
 							<Contact />
 							<Footer />
 						</>
-					} />
+					} 
+				/>
+
+				<Route
+					path="/cv"
+				/>
 				<Route
 					path="*"
 					element={
 						<Navigate
 							to="/" />
-					} />
+					} 
+					/>
 			</Routes>
 		</Router>
-		// <Router>
-		// 		<div className="main-content">
-		// 			{/* <Navbar />
-		// 			<ScrollToTop />
-		// 			<Preloader load={load} />
-		// 			<About /> */}
-		// 			<div className="" id={load ? "no-scroll" : "scroll"}>
-		// 				<Routes>
-		// 					<Route path="/" element={<About />} />
-		// 					<Route path="*" element={<Navigate to="/" />} />
-		// 				</Routes>
-		// 			</div>
-		// 		</div>
-		// 	<Footer />
-		// </Router>
 	);
 }
 
