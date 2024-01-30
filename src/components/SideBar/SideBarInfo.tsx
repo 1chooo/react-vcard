@@ -1,8 +1,9 @@
 import profileImage from "../../Assets/images/profile.jpg";
 import { MdExpandMore } from "react-icons/md";
-
+import React, { useState } from "react";
 
 function SideBarInfo() {
+
     return (
         <div className="sidebar-info">
             <figure className="avatar-box">
