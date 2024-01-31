@@ -3,6 +3,7 @@ import Sidebar from "../SideBar/SideBar";
 import React from "react";
 import AboutText from "./AboutText";
 import AboutHeader from "./AboutHeader";
+import Github from "./Github";
 import {
     useLocation
 } from 'react-router-dom';
@@ -26,9 +27,8 @@ function About() {
                     <AboutHeader />
 
                     <AboutText />
-                    <AboutText />
-                    <AboutText />
-                    <AboutText />
+
+                    <Github />
                 </article>
             </div>
         </main>
