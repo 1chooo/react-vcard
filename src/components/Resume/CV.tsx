@@ -1,1 +1,5 @@
-export {}
+function CV() {
+  
+}
+
+export default CV;
