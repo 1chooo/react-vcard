@@ -15,14 +15,6 @@ import Resume from "./components/Resume/Resume";
 import Footer from "./components/Footer";
 import Preloader from "../src/components/Pre";
 import ScrollToTop from "./components/ScrollToTop";
-import { 
-  Document, 
-  Page, 
-  pdfjs 
-} from "react-pdf";
-import onePageResume from "./Assets/Documents/cv.pdf";
-
-// import PDFViewer from "./components/Resume/PDFViewer";
 
 function App() {
 
@@ -69,14 +61,14 @@ function App() {
           }
         />
 
-        <Route
+        {/* <Route
           path="/cv"
           element={
             <>
               <Footer />
             </>
           }
-        />
+        /> */}
         <Route
           path="*"
           element={
