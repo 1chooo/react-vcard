@@ -4,6 +4,7 @@ import Sidebar from "../SideBar/SideBar";
 import Education from "./Education";
 import Working from "./Working";
 import Teaching from "./Teaching";
+import Skills from "./Skills";
 
 
 import {
@@ -46,6 +47,8 @@ function Resume() {
           <Working />
 
           <Teaching />
+
+          <Skills />
         </article>
       </div>
     </main>

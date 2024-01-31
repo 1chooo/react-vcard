@@ -65,8 +65,7 @@ function Teaching() {
               className="code-highlight-yellow"
               rel="noreferrer"
             >
-              National
-              Central University</a> | 📍 Taoyuan, Taiwan
+              National Central University</a> | 📍 Taoyuan, Taiwan
           </p>
 
           <p className="timeline-text">
