@@ -4,14 +4,15 @@ import Sidebar from "../SideBar/SideBar";
 import Education from "./Education";
 import Working from "./Working";
 import Teaching from "./Teaching";
-import Skills from "./Skills";
 
 
 import {
   useLocation
 } from 'react-router-dom';
 
-import { IoCloudDownloadOutline } from "react-icons/io5";
+import {
+  IoCloudDownloadOutline
+} from "react-icons/io5";
 
 function Resume() {
 
@@ -47,8 +48,6 @@ function Resume() {
           <Working />
 
           <Teaching />
-
-          <Skills />
         </article>
       </div>
     </main>
