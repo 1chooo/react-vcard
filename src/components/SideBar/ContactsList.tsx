@@ -1,4 +1,8 @@
-import React from "react";
+import React, {
+	FunctionComponent
+} from "react";
+
+
 import {
 	HiOutlineMail
 } from "react-icons/hi";
@@ -12,7 +16,8 @@ import {
 	TbPhoneCalling
 } from "react-icons/tb";
 
-function ContactsList() {
+
+const ContactsList: FunctionComponent = ({ }) => {
 	return (
 		<ul className="contacts-list">
 
@@ -25,7 +30,12 @@ function ContactsList() {
 				<div className="contact-info">
 					<p className="contact-title">Email</p>
 
-					<a href="mailto:hugo970217@gmail.com" className="contact-link">hugo970217@gmail.com</a>
+					<a
+						href="mailto:hugo970217@gmail.com"
+						className="contact-link"
+					>
+						hugo970217@gmail.com
+					</a>
 				</div>
 
 			</li>
@@ -39,7 +49,7 @@ function ContactsList() {
 				<div className="contact-info">
 					<p className="contact-title">Phone</p>
 
-					<a href="#" className="contact-link">404 Not Found 📲</a>
+					<p className="contact-link">404 Not Found 📲</p>
 				</div>
 
 			</li>

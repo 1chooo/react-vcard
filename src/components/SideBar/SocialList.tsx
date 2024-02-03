@@ -1,4 +1,8 @@
-import React from "react";
+import React, {
+	FunctionComponent
+} from "react";
+
+
 import {
 	SiGithub,
 } from "react-icons/si";
@@ -11,7 +15,8 @@ import {
 	MdAttachment
 } from "react-icons/md";
 
-function SocialList() {
+
+const SocialList: FunctionComponent = ({ }) => {
 	return (
 		<ul className="social-list">
 
