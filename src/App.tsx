@@ -8,12 +8,18 @@ import {
   Routes,
   Navigate
 } from "react-router-dom";
+
+
 import './App.css';
+
+
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Resume from "./components/Resume/Resume";
 import Footer from "./components/Footer";
 import Preloader from "../src/components/Pre";
+import Blog from "./components/Blog/Blog";
+import Portfolio from "./components/Portfolio/Portfolio";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
@@ -35,25 +41,55 @@ function App() {
           path="/"
           element={
             <>
+              <ScrollToTop />
               <Preloader load={load} />
               <About />
               <Footer />
             </>
           }
         />
+
         <Route
           path="/resume"
           element={
             <>
+              <ScrollToTop />
+              <Preloader load={load} />
               <Resume />
               <Footer />
             </>
           }
         />
+
+        <Route
+          path="/portfolio"
+          element={
+            <>
+              <ScrollToTop />
+              <Preloader load={load} />
+              <Portfolio />
+              <Footer />
+            </>
+          }
+        />
+
+        <Route
+          path="/blog"
+          element={
+            <>
+              <ScrollToTop />
+              <Preloader load={load} />
+              <Blog />
+              <Footer />
+            </>
+          }
+        />
+
         <Route
           path="/contact"
           element={
             <>
+              <ScrollToTop />
               <Preloader load={load} />
               <Contact />
               <Footer />
@@ -61,19 +97,10 @@ function App() {
           }
         />
 
-        {/* <Route
-          path="/cv"
-          element={
-            <>
-              <Footer />
-            </>
-          }
-        /> */}
         <Route
           path="*"
           element={
-            <Navigate
-              to="/" />
+            <Navigate to="/" />
           }
         />
       </Routes>
