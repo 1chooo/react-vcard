@@ -1,39 +1,44 @@
-function AboutText() {
-    return (
-        <section className="about-text">
-            <p>
-                <h3><code> $ ls -al Hugo 👨🏻‍💻 (He/Him)</code></h3>
-            </p>
+import { FunctionComponent } from "react";
 
-            <p>
-                <h4>📢 Incoming <code className="code-highlight-yellow">2024 eCloudvalley Intern - Cloud Developer 👨🏻‍💻</code></h4>
-            </p>
+const AboutText: FunctionComponent = ({ }) => {
+  return (
+    <section className="about-text">
+      <p>
+        <h3><code> $ ls -al Hugo 👨🏻‍💻 (He/Him)</code></h3>
+      </p>
 
-            <p>
-                Hi, this is Hugo ChunHo Lin,
-                a 4th-year student at
-                <a href="https://www.ncu.edu.tw/" className="code-highlight-yellow"> National Central University (NCU)</a>,
-                driven by a <em><strong>genuine passion </strong></em>
-                for the field of <strong>Software Engineering 💻</strong>.
-            </p>
+      <p>
+        <h4>📢 Incoming <code className="code-highlight-yellow">2024 eCloudvalley Intern - Cloud Developer 👨🏻‍💻</code></h4>
+      </p>
 
-            <p>
-                I am currently preparing my application for a Master's Degree,
-                while simultaneously serving as a
-                <strong><a href="https://aws.amazon.com/tw/education/awseducate/" className="code-highlight-yellow"> Amazon Web Services (AWS) Educate</a> Cloud Ambassador -- Tech Support </strong>
-                and an <strong>Ex Software Engineering (SWE) Intern at <a href="https://www.pegatroncorp.com/" className="code-highlight-yellow">Pegatron</a></strong>,
-                turning complex problems into simple, beautiful and intuitive designs.
-            </p>
+      <p>
+        I'm <strong>Hugo ChunHo Lin</strong>, a 4th-year student at
+        <a
+          href="https://www.ncu.edu.tw/"
+          className="code-highlight-yellow"
+          target="_blank"
+          rel="noreferrer"
+        > National Central University 🐿️
+        </a>, fueled by a <em><strong>sincere passion </strong></em>
+        for the field of <strong>Software Engineering 💻</strong>.
+      </p>
 
-            <p>
-                As part of my preparation, I'm honing my programming skills using the <strong><code className="code-highlight-yellow">GO</code></strong> language for <strong>Web Development,</strong> focusing on <strong>API creation and backend tasks.</strong> Additionally, I'm delving into <strong>automated deployment processes</strong> to grasp fundamental concepts of <strong><code className="code-highlight-yellow">Kubernetes</code> and <code className="code-highlight-yellow">Cloud Dev.</code> workflows.</strong>
-            </p>
+      <p>
+        <em>I do <strong>Web Development and Cloud Development </strong> 
+        with a focus on <strong>creating APIs and handling backend tasks </strong> 
+        using <code className="code-highlight-yellow">FastAPI, Gin, and AWS</code>. </em>
+        
+        In general, I define new problems and find existing problems, 
+        transforming solutions into helpful documents or articles to assist everyone in the process,
+        and eventually apply them to make social impacts.
+      </p>
 
-            <p>
-                Lastly, I would like to demonstrate my enthusiastic <code className="code-highlight-yellow">Open-Source</code> spirit, as I am eager to share my new knowledge and what I have learned. Thank you all for being here.
-            </p>
-        </section>
-    );
+      <p>
+        In my spare time, I do <em>street photography 📷</em> and <em>consistently share my findings on GitHub with Global 🌏.</em>
+      </p>
+
+    </section>
+  );
 }
 
 export default AboutText;

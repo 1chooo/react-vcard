@@ -1,39 +1,44 @@
-import NavBar from "../Navbar";
-import Sidebar from "../SideBar/SideBar";
-import React from "react";
-import AboutText from "./AboutText";
-import AboutHeader from "./AboutHeader";
-import Github from "./Github";
+import React, { FunctionComponent } from "react";
 import {
-    useLocation
+  useLocation
 } from 'react-router-dom';
 
-function About() {
+import NavBar from "../Navbar";
+import Sidebar from "../SideBar/SideBar";
+import AboutHeader from "./AboutHeader";
+import AboutText from "./AboutText";
+import LifeStyles from "./LifeStyles";
+import Github from "./Github";
 
-    const location = useLocation();
+const About: FunctionComponent = ({ }) => {
 
-    return (
-        <main>
+  const location = useLocation();
 
-            <Sidebar />
-            <div className="main-content">
+  return (
+    <main>
 
-                <NavBar />
+      <Sidebar />
+      <div className="main-content">
 
-                <article
-                    className={`about ${location.pathname === '/' ? 'active' : ''}`}
-                    data-page="about"
-                >
-                    <AboutHeader />
+        <NavBar />
 
-                    <AboutText />
+        <article
+          className={`about ${location.pathname === '/' ? 'active' : ''}`}
+          data-page="about"
+        >
+          <AboutHeader />
 
-                    <Github />
-                </article>
-            </div>
-        </main>
+          <AboutText />
 
-    );
+          <LifeStyles />
+
+          <Github />
+
+        </article>
+      </div>
+    </main>
+
+  );
 }
 
 export default About;
