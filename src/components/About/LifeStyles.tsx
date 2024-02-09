@@ -1,26 +1,27 @@
-import { FunctionComponent } from "react";
+import writingImage from "../../Assets/images/icons/writing.png";
+import dumbBellImage from "../../Assets/images/icons/dumbbell.png";
+import developerImage from "../../Assets/images/icons/developer.png";
+import cameraImage from "../../Assets/images/icons/camera.png";
 
-import { VscTools } from "react-icons/vsc";
-import { LuPencilLine } from "react-icons/lu";
-import { IoBasketballOutline } from "react-icons/io5";
 
-const LifeStyles: FunctionComponent = ({ }) => {
+const LifeStyles: React.FC = () => {
   return (
     <section className="service">
 
-      <section className="about-text">
+      <p>
         <h3><code> $ ls -al Life Style</code></h3>
-      </section>
+      </p>
 
       <ul className="service-list">
 
         <li className="service-item">
 
-          {/* 手機模式下 service-icon-box 目前沒有置中 */}
           <div className="service-icon-box">
-            <div className="icon-box">
-              <VscTools />
-            </div>
+            <img
+              src={developerImage}
+              alt="Developer"
+              width="30"
+            />
           </div>
 
           <div className="service-content-box">
@@ -36,9 +37,11 @@ const LifeStyles: FunctionComponent = ({ }) => {
         <li className="service-item">
 
           <div className="service-icon-box">
-            <div className="icon-box">
-              <LuPencilLine />
-            </div>
+            <img
+              src={writingImage}
+              alt="Writing"
+              width="30"
+            />
           </div>
 
           <div className="service-content-box">
@@ -54,9 +57,11 @@ const LifeStyles: FunctionComponent = ({ }) => {
         <li className="service-item">
 
           <div className="service-icon-box">
-            <div className="icon-box">
-              <IoBasketballOutline />
-            </div>
+            <img
+              src={dumbBellImage}
+              alt="Dumbbell"
+              width="30"
+            />
           </div>
 
           <div className="service-content-box">
@@ -69,6 +74,25 @@ const LifeStyles: FunctionComponent = ({ }) => {
 
         </li>
 
+        <li className="service-item">
+
+          <div className="service-icon-box">
+            <img
+              src={cameraImage}
+              alt="Camera"
+              width="30"
+            />
+          </div>
+
+          <div className="service-content-box">
+            <h4 className="h4 service-item-title">Photography</h4>
+
+            <p className="service-item-text">
+              Sky brings freedom; streets, a reminder of others' contributions.
+            </p>
+          </div>
+
+        </li>
 
       </ul>
 
