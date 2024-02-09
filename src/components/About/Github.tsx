@@ -1,7 +1,7 @@
-import React, { FunctionComponent } from "react";
 import GitHubCalendar from "react-github-calendar";
 
-const GitHub: FunctionComponent = ({ }) => {
+
+const GitHub: React.FC = ( ) => {
 
   const yellowTheme = {
     light: ['hsl(0, 0%, 92%)', '#FFDA6B'],

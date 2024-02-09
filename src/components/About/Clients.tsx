@@ -4,7 +4,8 @@ import yoonaImage from "../../Assets/images/idols/yoona_01.png";
 import yoonaImage2 from "../../Assets/images/idols/yoona_02.png";
 import yujinImage from "../../Assets/images/idols/yujin.png";
 
-const Clients: React.FC = () => {
+
+const Clients: React.FC = ( ) => {
   return (
 
     <section className="clients">

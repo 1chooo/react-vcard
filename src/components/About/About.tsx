@@ -1,7 +1,8 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import {
   useLocation
 } from 'react-router-dom';
+
 
 import NavBar from "../Navbar";
 import Sidebar from "../SideBar/SideBar";
@@ -9,8 +10,10 @@ import AboutHeader from "./AboutHeader";
 import AboutText from "./AboutText";
 import LifeStyles from "./LifeStyles";
 import Github from "./Github";
+import TechStack from "./TechStack";
 
-const About: FunctionComponent = ({ }) => {
+
+const About: React.FC = ( ) => {
 
   const location = useLocation();
 
@@ -30,8 +33,10 @@ const About: FunctionComponent = ({ }) => {
 
           <AboutText />
 
-          <LifeStyles />
+          <TechStack />
 
+          <LifeStyles />
+          
           <Github />
 
         </article>
