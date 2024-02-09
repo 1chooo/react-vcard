@@ -1,8 +1,3 @@
-import React, {
-	FunctionComponent
-} from "react";
-
-
 import {
 	SiGithub,
 } from "react-icons/si";
@@ -16,7 +11,7 @@ import {
 } from "react-icons/md";
 
 
-const SocialList: FunctionComponent = ({ }) => {
+const SocialList: React.FC = ( ) => {
 	return (
 		<ul className="social-list">
 

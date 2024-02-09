@@ -1,8 +1,3 @@
-import React, {
-	FunctionComponent
-} from "react";
-
-
 import {
 	HiOutlineMail
 } from "react-icons/hi";
@@ -17,7 +12,7 @@ import {
 } from "react-icons/tb";
 
 
-const ContactsList: FunctionComponent = ({ }) => {
+const ContactsList: React.FC = ( ) => {
 	return (
 		<ul className="contacts-list">
 

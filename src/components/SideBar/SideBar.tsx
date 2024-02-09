@@ -1,6 +1,5 @@
 import React, {
-  FunctionComponent,
-  useState
+  useState,
 } from 'react';
 
 // Side Bar info Materials
@@ -10,7 +9,7 @@ import { MdExpandMore } from "react-icons/md";
 import SocialList from './SocialList';
 import ContactsList from './ContactsList';
 
-const SideBar: FunctionComponent = ({ }) => {
+const SideBar: React.FC = ( ) => {
 
   // Sidebar state
   const [isActive, setIsActive] = useState(false);
