@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "../Navbar";
 import Sidebar from "../SideBar/SideBar";
+import DownloadCV from "./DownloadCV";
 import Education from "./Education";
 import Working from "./Working";
 import Teaching from "./Teaching";
@@ -10,11 +11,8 @@ import {
   useLocation
 } from 'react-router-dom';
 
-import {
-  IoCloudDownloadOutline
-} from "react-icons/io5";
 
-function Resume() {
+const Resume: React.FC = () => {
 
   const location = useLocation();
 
@@ -31,17 +29,7 @@ function Resume() {
             <h2 className="h2 article-title">Resume</h2>
           </header>
 
-          <section className="timeline">
-            <div className="title-wrapper">
-              <div className="icon-box">
-                <IoCloudDownloadOutline />
-              </div>
-
-              <a href="./cv.pdf" target="_blank" className="code-highlight-yellow" style={{ fontWeight: 'bold' }}>
-                <u>Download Hugo's full academic CV</u>
-              </a>
-            </div>
-          </section>
+          <DownloadCV />
 
           <Education />
 

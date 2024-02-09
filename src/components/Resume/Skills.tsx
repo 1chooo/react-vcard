@@ -1,4 +1,4 @@
-function Skills() {
+const Skills: React.FC = () => {
   return (
     <section className="skill">
 
