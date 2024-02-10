@@ -1,2 +1,2 @@
-*.css linguist-vendored
-*.html linguist-vendored
+*.css linguist-vendored=TypeScript
+*.html linguist-vendored=TypeScript
