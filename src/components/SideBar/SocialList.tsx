@@ -7,11 +7,13 @@ import {
 	FaLinkedinIn,
 } from "react-icons/fa6";
 import {
-	MdAttachment
+	MdAttachment,
+	MdOutlineSignpost,
 } from "react-icons/md";
 
 
-const SocialList: React.FC = ( ) => {
+
+const SocialList: React.FC = () => {
 	return (
 		<ul className="social-list">
 
@@ -56,6 +58,17 @@ const SocialList: React.FC = ( ) => {
 					rel="noopener noreferrer"
 				>
 					<FaXTwitter />
+				</a>
+			</li>
+
+			<li className="social-item">
+				<a
+					href="https://blog.1chooo.com"
+					className="social-link"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<MdOutlineSignpost />
 				</a>
 			</li>
 

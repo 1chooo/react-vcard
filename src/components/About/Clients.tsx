@@ -4,54 +4,36 @@ import yoonaImage from "../../Assets/images/idols/yoona_01.png";
 import yoonaImage2 from "../../Assets/images/idols/yoona_02.png";
 import yujinImage from "../../Assets/images/idols/yujin.png";
 
+interface Client {
+  image: string;
+  alt: string;
+}
 
-const Clients: React.FC = ( ) => {
+const clients: Client[] = [
+  { image: chaewonImage, alt: "ChaeWon Image" },
+  { image: yoonaImage, alt: "Yoona Image" },
+  { image: yoonaImage2, alt: "Yoona Image" },
+  { image: yujinImage, alt: "YuJin Image" },
+  { image: chaewonImage3, alt: "ChaeWon Image" }
+];
+
+
+
+const Clients: React.FC = () => {
   return (
 
     <section className="clients">
-      
-      <section className="about-text">
-        <p>
-          <h3><code> $ ls -al Idols</code></h3>
-        </p>
-      </section>
+
+      <p>
+        <h3><code> $ ls -al Idols</code></h3>
+      </p>
 
       <ul className="clients-list has-scrollbar">
-
-        <li className="clients-item">
-          <img
-            src={chaewonImage}
-            alt="ChaeWon Image"
-          />
-        </li>
-
-        <li className="clients-item">
-          <img
-            src={yoonaImage}
-            alt="Yoona Image"
-          />
-        </li>
-
-        <li className="clients-item">
-          <img
-            src={yoonaImage2}
-            alt="Yoona Image"
-          />
-        </li>
-
-        <li className="clients-item">
-          <img
-            src={yujinImage}
-            alt="YuJin Image"
-          />
-        </li>
-
-        <li className="clients-item">
-          <img
-            src={chaewonImage3}
-            alt="ChaeWon Image"
-          />
-        </li>
+        {clients.map((client, index) => (
+          <li key={index} className="clients-item">
+            <img src={client.image} alt={client.alt} loading="lazy" />
+          </li>
+        ))}
       </ul>
 
     </section>

@@ -1,15 +1,6 @@
-/**
- * # style.css
- */
-
 /*-----------------------------------*\
   #copyright 2024 @1chooo
 \*-----------------------------------*/
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
-
 
 :root {
 
@@ -95,8 +86,42 @@
 
 }
 
+/*-----------------------------------*\
+    #PAGINATION
+\*-----------------------------------*/
 
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
 
+.pagination-btn {
+     /* adjust the text to the center */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--border-gradient-onyx);
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: hsl(0, 0%, 98%);
+    transition: background-color 0.3s ease;
+    border-radius: 14px;
+}
+
+.pagination-btn.active {
+    color: hsl(45, 100%, 71%);
+    animation: scaleUp 0.25s ease forwards;
+}
+
+.pagination-btn:hover {
+    background-color: hsl(45, 100%, 71%);
+}
 
 
 /*-----------------------------------*\
@@ -275,10 +300,10 @@ article.active {
 }
 
 .has-scrollbar::-webkit-scrollbar {
-    width: 5px;
     /* for vertical scrollbar */
-    height: 5px;
+    width: 5px;
     /* for horizontal scrollbar */
+    height: 5px;
 }
 
 .has-scrollbar::-webkit-scrollbar-track {
@@ -315,10 +340,6 @@ article.active {
     z-index: -1;
 }
 
-
-
-
-
 /*-----------------------------------*\
     #MAIN
 \*-----------------------------------*/
@@ -328,10 +349,6 @@ main {
     margin-bottom: 75px;
     min-width: 259px;
 }
-
-
-
-
 
 /*-----------------------------------*\
     #SIDEBAR
@@ -389,7 +406,7 @@ main {
     border-radius: 8px;
 }
 
-.info_more-btn {
+.info-more-btn {
     position: absolute;
     top: -15px;
     right: -15px;
@@ -403,7 +420,7 @@ main {
     z-index: 1;
 }
 
-.info_more-btn::before {
+.info-more-btn::before {
     content: "";
     position: absolute;
     inset: 1px;
@@ -413,27 +430,27 @@ main {
     z-index: -1;
 }
 
-.info_more-btn:hover,
-.info_more-btn:focus {
+.info-more-btn:hover,
+.info-more-btn:focus {
     background: var(--bg-gradient-yellow-1);
 }
 
-.info_more-btn:hover::before,
-.info_more-btn:focus::before {
+.info-more-btn:hover::before,
+.info-more-btn:focus::before {
     background: var(--bg-gradient-yellow-2);
 }
 
-.info_more-btn span {
+.info-more-btn span {
     display: none;
 }
 
-.sidebar-info_more {
+.sidebar-info-more {
     opacity: 0;
     visibility: hidden;
     transition: var(--transition-2);
 }
 
-.sidebar.active .sidebar-info_more {
+.sidebar.active .sidebar-info-more {
     opacity: 1;
     visibility: visible;
 }
@@ -539,6 +556,25 @@ main {
 
 
 
+
+/*-----------------------------------*\
+    #DOCS
+\*-----------------------------------*/
+
+.docs .article-title {
+    margin-bottom: 15px;
+}
+
+.docs-text {
+    color: var(--light-gray);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-300);
+    line-height: 1.6;
+}
+
+.docs-text p {
+    margin-bottom: 15px;
+}
 
 /*-----------------------------------*\
     #ABOUT
@@ -663,6 +699,14 @@ main {
     scroll-behavior: smooth;
     overscroll-behavior-inline: contain;
     scroll-snap-type: inline mandatory;
+}
+
+.clients p {
+    margin-bottom: 15px;
+    color: var(--light-gray);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-300);
+    line-height: 1.6;
 }
 
 .techstack p {
@@ -934,6 +978,11 @@ main {
     margin-left: 45px;
 }
 
+.relevant-courses-list {
+    font-size: var(--fs-6);
+    margin-left: 25px;
+}
+
 .timeline-item {
     position: relative;
 }
@@ -946,6 +995,12 @@ main {
     font-size: var(--fs-6);
     line-height: 1.3;
     margin-bottom: 7px;
+}
+
+.relevant-courses-list span {
+    color: var(--vegas-gold);
+    font-weight: var(--fw-400);
+    line-height: 1.6;
 }
 
 .timeline-list span {
@@ -1057,7 +1112,7 @@ main {
     background: #232f3e;
     height: 100%;
     border-radius: inherit;
-  }
+}
 
 .skill-progress-fill-aws-light {
     background: #FF9900;
@@ -1076,6 +1131,26 @@ main {
     display: inline;
 }
 
+.profession-experience-title {
+    color: var(--orange-yellow-crayola);
+    display: inline;
+}
+
+.profession-experience-duration {
+    float: right;
+    color: var(--white-1);
+    /* 添加你想要的样式 */
+}
+
+.timeline-list p span {
+    float: right;
+    color: var(--white-1);
+}
+
+.timeline-list h4 span {
+    float: right;
+    color: var(--white-1);
+}
 
 /*-----------------------------------*\
     #PORTFOLIO
@@ -1158,6 +1233,11 @@ main {
 .project-item.active {
     display: block;
     animation: scaleUp 0.25s ease forwards;
+}
+
+.project-item>a:hover .project-title {
+    color: var(--orange-yellow-crayola);
+    font-weight: bold;
 }
 
 @keyframes scaleUp {
@@ -1273,7 +1353,20 @@ main {
     gap: 20px;
 }
 
-.blog-post-item>a {
+/* .blog-post-item>a {
+    display: none;
+} */
+
+.blog-post-item {
+    display: none;
+}
+
+.blog-post-item.active {
+    display: block;
+    animation: scaleUp 0.25s ease forwards;
+}
+
+.blog-post-item.active>a {
     position: relative;
     background: var(--border-gradient-onyx);
     height: 100%;
@@ -1282,7 +1375,7 @@ main {
     z-index: 1;
 }
 
-.blog-post-item>a::before {
+.blog-post-item.active>a::before {
     content: "";
     position: absolute;
     inset: 1px;
@@ -1305,9 +1398,13 @@ main {
     transition: var(--transition-1);
 }
 
-.blog-post-item>a:hover .blog-banner-box img {
+.blog-post-item.active>a:hover .blog-banner-box img {
     transform: scale(1.1);
 }
+
+/* .blog-post-item>a:hover .blog-banner-box img {
+    transform: scale(1.1);
+} */
 
 .blog-content {
     padding: 15px;
@@ -1340,9 +1437,13 @@ main {
     transition: var(--transition-1);
 }
 
-.blog-post-item>a:hover .blog-item-title {
+.blog-post-item.active>a:hover .blog-item-title {
     color: var(--orange-yellow-crayola);
 }
+
+/* .blog-post-item>a:hover .blog-item-title {
+    color: var(--orange-yellow-crayola);
+} */
 
 .blog-text {
     color: var(--light-gray);
@@ -1493,8 +1594,16 @@ textarea.form-input::-webkit-resizer {
 \*-----------------------------------*/
 
 /**
-* responsive larger than 450px screen
+* responsive larger than 250px screen
 */
+
+@media (min-width: 250px) {
+
+    .techstack-item {
+        min-width: calc(25% - 20px);
+    }
+
+}
 
 /**
 * responsive larger than 375px screen
@@ -1512,7 +1621,7 @@ textarea.form-input::-webkit-resizer {
 
 
     .techstack-item {
-        min-width: calc(10% - 20px);
+        min-width: calc(20% - 10px);
     }
 
 
@@ -1527,6 +1636,10 @@ textarea.form-input::-webkit-resizer {
     }
 
 }
+
+/**
+* responsive larger than 450px screen
+*/
 
 @media (min-width: 450px) {
 
@@ -1552,6 +1665,10 @@ textarea.form-input::-webkit-resizer {
     .project-img,
     .blog-banner-box {
         height: auto;
+    }
+
+    .techstack-item {
+        min-width: calc(15% - 10px);
     }
 
 }
@@ -1666,23 +1783,23 @@ textarea.form-input::-webkit-resizer {
         padding: 5px 18px;
     }
 
-    .info_more-btn {
+    .info-more-btn {
         top: -30px;
         right: -30px;
         padding: 10px 15px;
     }
 
-    .info_more-btn span {
+    .info-more-btn span {
         display: block;
         font-size: var(--fs-8);
     }
 
-    .info_more-btn svg {
+    .info-more-btn svg {
         display: none;
     }
 
-    
-    
+
+
 
 
     .separator {
@@ -1717,6 +1834,18 @@ textarea.form-input::-webkit-resizer {
     }
 
 
+
+    /**
+    * # DOCS
+    */
+
+    .docs .article-title {
+        margin-bottom: 20px;
+    }
+
+    .docs-text {
+        margin-bottom: 40px;
+    }
 
     /**
     * #ABOUT
@@ -1845,7 +1974,7 @@ textarea.form-input::-webkit-resizer {
 
 
     .techstack-item {
-        min-width: calc(10% - 20px);
+        min-width: calc(15% - 20px);
     }
 
 
@@ -1853,6 +1982,10 @@ textarea.form-input::-webkit-resizer {
     /**
     * #RESUME
     */
+
+    .relevant-courses-list {
+        margin-left: 25px;
+    }
 
     .timeline-list {
         margin-left: 65px;
@@ -1960,7 +2093,7 @@ textarea.form-input::-webkit-resizer {
         gap: 30px 15px;
     }
 
-    .info_more-btn svg {
+    .info-more-btn svg {
         display: none;
     }
 
@@ -1990,6 +2123,8 @@ textarea.form-input::-webkit-resizer {
     .modal-avatar-box img {
         width: 80px;
     }
+
+
 
 
 
@@ -2090,7 +2225,7 @@ textarea.form-input::-webkit-resizer {
         box-shadow: var(--shadow-5);
     }
 
-    .info_more-btn svg {
+    .info-more-btn svg {
         display: none;
     }
 
@@ -2299,11 +2434,11 @@ textarea.form-input::-webkit-resizer {
         margin: auto;
     }
 
-    .info_more-btn {
+    .info-more-btn {
         display: none;
     }
 
-    .sidebar-info_more {
+    .sidebar-info-more {
         opacity: 1;
         visibility: visible;
     }

@@ -1,4 +1,12 @@
-import { IoSchoolOutline } from "react-icons/io5";
+import {
+  IoSchoolOutline
+} from "react-icons/io5";
+
+import {
+  EducationProps,
+  newEducation,
+} from '../../config/ResumeData';
+
 
 const Education: React.FC = () => {
   return (
@@ -13,43 +21,20 @@ const Education: React.FC = () => {
       </div>
 
       <ol className="timeline-list">
-        <li className="timeline-item">
-
-          <h4 className="h4 timeline-item-title">Bachelor's degree, Atmospheric Science</h4>
-
-          <span>Sep. 2020 — Jun. 2024</span>
-
-          <p className="timeline-text">
-            <a
-              href="https://www.ncu.edu.tw/"
-              target="_blank"
-              className="code-highlight-yellow"
-              rel="noreferrer"
-            >
-              National Central University</a> | 📍 Taoyuan, Taiwan
-          </p>
-
-          <p className="timeline-text">
-            <em><strong>💻 Minor Specialty:</strong> Computer Science & Information Engineering</em>
-          </p>
-
-          <p className="timeline-text">
-            <ul>
-              <li>
-                <strong>💻 Relevant Courses: </strong> 
-                The Attack and Defense of Computers, 
-                Principles of Programming Languages, 
-                Computer Network, 
-                Algorithmics, 
-                Data Structures, 
-                Assembly Language and System Programming, 
-                Degital Design.
-              </li>
-            </ul>
-          </p>
-
-        </li>
+        {newEducation.map((
+          newEducation: EducationProps,
+          index: number,
+        ) => (
+          <li className="timeline-item" key={index}>
+            <h4 className="h4 timeline-item-title">
+              {newEducation.title}
+              <span style={{ float: "right" }}>{newEducation.location}</span>
+            </h4>
+            {newEducation.description}
+          </li>
+        ))}
       </ol>
+
 
     </section>
   );
