@@ -3,11 +3,11 @@ import './App.css';
 import AppRoutes from "./AppRoutes";
 
 const App: React.FC = () => {
-  const [load, updateLoad] = useState(true);
+  const [load, setLoad] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      updateLoad(false);
+      setLoad(false);
     }, 1200);
 
     return () => clearTimeout(timer);
