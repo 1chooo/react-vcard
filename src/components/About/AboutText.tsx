@@ -1,28 +1,25 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import Anchor from '../Anchor';
+import SubHeader from './SubHeader';
+import MarkdownRenderer from '../MarkdownRenderer';
 
 import { abouts } from '../../config/about';
 
 const AboutText: React.FC = () => {
   const { subHeader, description } = abouts;
 
+  // TODO: move to utils
   const renderDescription = () =>
     description.map((item, index) => (
-      <ReactMarkdown
-        key={index}
-        children={item}
-        remarkPlugins={[remarkGfm]}
-        components={{ a: ({ node, ...props }) => <Anchor {...props} /> }}
+      <MarkdownRenderer
+        key={`${item}-${index}`}
+        content={item}
       />
     ));
 
   return (
     <section className="about-text">
-      <p>
-        <h3><code>{subHeader}</code></h3>
-      </p>
+      <SubHeader text={subHeader} />
+      <br />
       {renderDescription()}
     </section>
   );
