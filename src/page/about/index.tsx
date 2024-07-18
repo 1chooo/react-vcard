@@ -11,8 +11,6 @@ import AboutText from "../../components/About/AboutText";
 import LifeStyles from "../../components/About/LifeStyles";
 import Github from "../../components/About/Github";
 import TechStack from "../../components/About/TechStack";
-// import Clients from "../components/About/Clients";
-// import Testimonial from "../components/About/Testimonial";
 import Header from "../../components/Header";
 
 
@@ -37,8 +35,6 @@ const About: React.FC = () => {
           <TechStack />
           <LifeStyles />
           <Github />
-          {/* <Clients /> */}
-          {/* <Testimonial /> */}
         </article>
       </div>
     </main>
