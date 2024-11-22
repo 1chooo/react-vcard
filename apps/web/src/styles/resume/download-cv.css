@@ -1,0 +1,11 @@
+.hyperlink-highlight {
+    color: var(--orange-yellow-crayola);
+    text-decoration: underline;
+    font-weight: bold;
+    align-items: center;
+    gap: 15px;
+}
+
+.hyperlink-highlight:hover {
+    text-decoration-color: hsla(0, 0%, 84%, 0.7);
+}

@@ -1,0 +1,19 @@
+.sidebar-info {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+@media (min-width: 580px) {
+    .sidebar-info {
+        gap: 25px;
+    }
+}
+
+@media (min-width: 1250px) {
+    .sidebar-info {
+        flex-direction: column;
+    }
+}
