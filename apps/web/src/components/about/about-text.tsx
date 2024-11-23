@@ -1,23 +1,18 @@
 import React from 'react';
 import MarkdownRenderer from '@/components/markdown/markdown-renderer';
 
-import config from '@/config';
 import "@/styles/about/about-text.css"
 
-const { introductions } = config.about;
+interface AboutTextProps {
+  introduction: string;
+}
 
-const AboutText: React.FC = () => {
-
-  const renderIntroduction = () =>
-    introductions.map((item, index) => (
-      <MarkdownRenderer key={`${item}-${index}`} content={item} />
-    ));
-
+const AboutText: React.FC<AboutTextProps> = ({ introduction }) => {
   return (
     <section className="about-text">
-      {renderIntroduction()}
+      <MarkdownRenderer content={introduction} />
     </section>
   );
-};
+}
 
 export default AboutText;

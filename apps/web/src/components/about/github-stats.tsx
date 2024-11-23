@@ -56,7 +56,6 @@ const GitHubStats: FC = () => {
   return (
     <section className="about-text">
       <H4 text={subHeaderText} />
-      <br />
       <GitHubCalendar
         username={username}
         blockSize={isMobile ? MOBILE_CALENDAR_SIZE : LAPTOP_CALENDAR_SIZE}
@@ -67,7 +66,6 @@ const GitHubStats: FC = () => {
         style={{ fontWeight: 'bold' }}
         theme={yellowTheme}
       />
-      <br />
     </section>
   );
 };
