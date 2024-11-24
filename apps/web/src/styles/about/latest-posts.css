@@ -112,9 +112,6 @@
 
 .latest-post-title {
     margin-left: 10px;
-}
-
-.latest-post-title {
     color: var(--white-2);
     font-size: var(--fs-5);
     font-weight: var(--fw-400);
