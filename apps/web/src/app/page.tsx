@@ -9,6 +9,8 @@ import LifeStyles from '@/components/about/life-styles';
 import PageHeader from '@/components/page-header';
 import H4 from '@/components/markdown/h4';
 import MarkdownRenderer from "@/components/markdown/markdown-renderer";
+import { FaRegPenToSquare } from "react-icons/fa6";
+import SeeMoreButton from "@/components/about/see-more-btn";
 import { getBlogPosts } from "@/lib/db/blog";
 import config from '@/config';
 
@@ -87,6 +89,7 @@ const About = () => {
           ))}
         </ul>
       </section>
+      <SeeMoreButton badge="See All Articles" path="/blog" icon={FaRegPenToSquare} />
       <GitHubStats />
       <TechStack />
       <LifeStyles />
