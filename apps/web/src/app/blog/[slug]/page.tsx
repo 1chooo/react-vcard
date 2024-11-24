@@ -12,10 +12,8 @@ import "@/styles/blog/blog-text.css"
 
 const { giscusConfig } = config;
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
+export async function generateMetadata({ params }: {
+  readonly params: { readonly slug: string };
 }): Promise<Metadata | undefined> {
   let post = getBlogPosts().find((post) => post.slug === params.slug);
   if (!post) {
@@ -103,7 +101,9 @@ function formatDate(date: string) {
   }
 }
 
-export default function Blog({ params }: { params: { slug: string } }) {
+export default function Blog({ params }: {
+  readonly params: { readonly slug: string }
+}) {
   let post = getBlogPosts().find((post) => post.slug === params.slug);
 
   if (!post) {
@@ -132,7 +132,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
       <article style={{ marginTop: '1rem' }}>
         <section className="blog-text">
           <PageHeader header="Comments" />
-          <Comments giscusConfig={giscusConfig}/>
+          <Comments giscusConfig={giscusConfig} />
         </section>
       </article>
     </div>

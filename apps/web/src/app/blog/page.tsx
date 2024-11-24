@@ -19,10 +19,8 @@ export const metadata = {
   description: "Read my thoughts on software development, design, and more.",
 };
 
-export default function BlogPage({
-  searchParams,
-}: {
-  searchParams: { tag?: string; page?: string };
+export default function BlogPage({ searchParams }: {
+  readonly searchParams: { tag?: string; page?: string };
 }) {
   let allBlogs = getBlogPosts();
   const blogTags = [

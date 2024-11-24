@@ -25,10 +25,8 @@ export const metadata = {
   description: "Read my thoughts on software development, design, and more.",
 };
 
-export default function Portfolio({
-  searchParams,
-}: {
-  searchParams: { tag?: string; page?: string };
+export default function Portfolio({ searchParams }: {
+  readonly searchParams: { tag?: string; page?: string };
 }) {
   let allBlogs = getPortfolioPosts();
   const blogTags = [

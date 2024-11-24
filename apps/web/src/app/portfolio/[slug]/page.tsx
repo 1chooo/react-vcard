@@ -8,10 +8,8 @@ import { getPortfolioPosts } from '@/lib/db/portfolio';
 
 import "@/styles/blog/blog-text.css"
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
+export async function generateMetadata({ params }: {
+  readonly params: { readonly slug: string };
 }): Promise<Metadata | undefined> {
   let post = getPortfolioPosts().find((post) => post.slug === params.slug);
   if (!post) {
@@ -99,7 +97,9 @@ function formatDate(date: string) {
   }
 }
 
-export default function Portfolio({ params }: { params: { slug: string } }) {
+export default function Portfolio({ params }: {
+  readonly params: { readonly slug: string }
+}) {
   let post = getPortfolioPosts().find((post) => post.slug === params.slug);
 
   if (!post) {
