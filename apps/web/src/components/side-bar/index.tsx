@@ -2,9 +2,7 @@
 
 import React, { useState, useRef } from 'react';
 import SideBarInfo from './sidebar-info';
-import SocialList from './social-list';
-import ContactsList from './contact-list';
-import Footer from './footer';
+import SideBarInfoMore from './sidebar-info-more';
 
 export const SideBar: React.FC = () => {
   const [isActive, setIsActive] = useState(false);
@@ -19,14 +17,7 @@ export const SideBar: React.FC = () => {
   return (
     <aside className={sideBarState} ref={sideBarRef} data-sidebar>
       <SideBarInfo onToggle={handleSidebarToggle} />
-      <div className="sidebar-info-more">
-        <div className="separator"></div>
-        <ContactsList />
-        <div className="separator-no-line"></div>
-        <SocialList />
-        <div className="separator-footer"></div>
-        <Footer />
-      </div>
+      <SideBarInfoMore />
     </aside>
   );
 }

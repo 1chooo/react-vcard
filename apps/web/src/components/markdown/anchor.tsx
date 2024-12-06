@@ -21,7 +21,7 @@ const Anchor: React.FC<AnchorProps> = ({ children, ...props }) => {
 
   return (
     <a
-      className="blog-text-a"
+      className="inline text-orange-yellow-crayola underline hover:text-opacity-70"
       target="_blank"
       rel="noreferrer"
       {...props}

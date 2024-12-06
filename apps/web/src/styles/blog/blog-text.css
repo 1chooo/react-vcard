@@ -8,16 +8,6 @@
     margin-bottom: 15px;
 }
 
-.blog-text-a {
-    display: inline;
-    color: var(--orange-yellow-crayola);
-    text-decoration: underline;
-}
-
-.blog-text-a:hover {
-    text-decoration-color: hsla(0, 0%, 84%, 0.7);
-}
-
 .blog-text ul li {
     list-style: disc;
 }

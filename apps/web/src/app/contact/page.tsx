@@ -23,9 +23,9 @@ const Contact = () => {
   return (
     <article data-page=''>
       <PageHeader header="Hugo's Contact" />
-      <section className="contact-form">
+      <section className="mb-[10px]">
         <MapBox />
-        <h3 className="h3 form-title">Contact Form</h3>
+        <h3 className="text-white-2 text-2xl font-bold mb-[20px]">Contact Form</h3>
         <form action="#" className="form" data-form>
           <div className="input-wrapper">
             <input

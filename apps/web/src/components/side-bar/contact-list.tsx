@@ -12,7 +12,7 @@ const ContactsList: React.FC = () => {
   return (
     <ul className="contacts-list">
       <ContactItem icon={HiOutlineMail} title="Email">
-        <Link href="mailto:hugo970217@gmail.com" className="contact-link">
+        <Link href="mailto:hugo970217@gmail.com" className="contact-link block">
           hugo970217@gmail.com
         </Link>
       </ContactItem>
@@ -22,11 +22,11 @@ const ContactsList: React.FC = () => {
       </ContactItem>
 
       <ContactItem icon={IoCalendarOutline} title="Birthday">
-        <time dateTime="2002-01-27">Jan. 27, 2002 🐻</time>
+        <time dateTime="2002-01-27" className="block">January 27, 2002 🐻</time>
       </ContactItem>
 
       <ContactItem icon={MdOutlineLocationOn} title="Location">
-        <address>Taipei, Taiwan 🇹🇼</address>
+        <address className="not-italic">Taipei, Taiwan 🇹🇼</address>
       </ContactItem>
     </ul>
   );

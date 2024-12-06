@@ -1,23 +1,18 @@
 // https://github.com/afiiif/pokemon-world/blob/main/src/types/pokemon.ts
 
+import type { Icon } from '@primer/octicons-react';
+import type { IconType } from 'react-icons';
+
 export type LifeStyle = {
-  icon  : string;
-  title : string;
-  text  : string;
+  icon: Icon;
+  title: string;
+  text: string;
 }
 
 export type TechStack = {
-  id: string;
-  src: string;
-  alt: string;
-}
-
-export type SocialMedia = {
-  githubUsername: string;
-  mediumUsername: string;
-  twitterUsername: string;
-  linkedinUsername: string;
-}
+  name: string;
+  icon: Icon | IconType;
+};
 
 /**
  * Type definition for the About component.
@@ -43,9 +38,8 @@ export type About = {
   preferredName: string;
   additionalName: string;
   pronouns: string;
-  socialMedia: SocialMedia;
+  githubUsername: string;
   introduction: string;
   lifestyles: LifeStyle[];
-  programmingLanguage: TechStack[];
-  devOps: TechStack[];
+  techStacks: TechStack[];
 }

@@ -4,8 +4,6 @@ import React, { useEffect, useState, FC } from 'react';
 import GitHubCalendar from 'react-github-calendar';
 import { ThemeInput } from 'react-activity-calendar';
 
-import H4 from '@/components/markdown/h4';
-
 import config from '@/config';
 
 /* 
@@ -18,11 +16,7 @@ const yellowTheme: ThemeInput = {
 };
 
 const { about } = config;
-
-const { socialMedia } = about;
-const { githubUsername } = socialMedia;
-
-const subHeaderText = '$ ls -al GitHub Stats';
+const { githubUsername } = about;
 
 const MOBILE_CALENDAR_SIZE = 12;
 const LAPTOP_CALENDAR_SIZE = 12;
@@ -54,8 +48,7 @@ const GitHubStats: FC = () => {
   const isMobile = windowWidth <= MOBILE_BREAKPOINT;
 
   return (
-    <section className="about-text">
-      <H4 text={subHeaderText} />
+    <section className="text-light-gray mt-5">
       <GitHubCalendar
         username={username}
         blockSize={isMobile ? MOBILE_CALENDAR_SIZE : LAPTOP_CALENDAR_SIZE}

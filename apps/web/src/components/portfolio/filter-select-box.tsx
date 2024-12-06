@@ -37,7 +37,7 @@ const FilterSelectBox: React.FC<FilterSelectBoxProps> = ({
                   setIsSelectActive(false);
                 }}
               >
-                <Link href={`/portfolio?tag=${encodeURIComponent(tag || '')}`}>
+                <Link href={`/portfolio?tag=${encodeURIComponent(tag)}`}>
                   {tag}
                 </Link>
               </button>

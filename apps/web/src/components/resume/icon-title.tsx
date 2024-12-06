@@ -8,9 +8,9 @@ interface IconTitleProps {
 }
 
 const IconTitle: React.FC<IconTitleProps> = ({ icon: Icon, title }) => (
-  <div className="title-wrapper">
+  <div className="flex items-center gap-4 mb-6">
     <IconBox icon={Icon} />
-    <h3 className="h3">{title}</h3>
+    <h3 className="text-white-2 text-2xl font-bold">{title}</h3>
   </div>
 );
 

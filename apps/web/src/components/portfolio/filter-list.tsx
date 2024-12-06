@@ -10,13 +10,12 @@ const FilterList: React.FC<FilterListProps> = ({
   selectedTag,
   blogTags
 }) => {
-
   return (
     <ul className="filter-list">
       {blogTags.map((tag, index) => (
         <li className="filter-item" key={index}>
           <Link
-            href={`/portfolio?tag=${encodeURIComponent(tag || '')}`}
+            href={`/portfolio?tag=${encodeURIComponent(tag)}`}
             className={`filter-btn ${selectedTag === tag ? 'active' : ''}`}
           >
             {tag}

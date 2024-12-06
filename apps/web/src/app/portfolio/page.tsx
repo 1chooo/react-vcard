@@ -4,18 +4,10 @@ import PageHeader from "@/components/page-header";
 import FilterSelectBox from "@/components/portfolio/filter-select-box";
 import FilterList from "@/components/portfolio/filter-list";
 import MarkdownRenderer from "@/components/markdown/markdown-renderer";
+import Pagination from "@/components/pagination";
 import { getPortfolioPosts } from "@/lib/db/portfolio";
 import config from "@/config";
 import { LuEye } from "react-icons/lu";
-import "react-loading-skeleton/dist/skeleton.css";
-
-/**
- * TODO: #257
- * update the document title see (#341)
- * export const metadata: Metadata = {
- *   title: `Contact | ${title}`,
- * };
- */
 
 const { title } = config;
 const POSTS_PER_PAGE = 9;
@@ -25,27 +17,29 @@ export const metadata = {
   description: "Read my thoughts on software development, design, and more.",
 };
 
-export default function Portfolio({ searchParams }: {
-  readonly searchParams: { tag?: string; page?: string };
-}) {
-  let allBlogs = getPortfolioPosts();
+type tParams = Promise<{ tag?: string; page?: string }>;
+
+export default async function Portfolio({ searchParams }: { searchParams: tParams }) {
+  const { tag = "All", page = "1" } = await searchParams;
+
+  const allPortfolioPosts = await getPortfolioPosts();
   const blogTags = [
     "All",
     ...Array.from(
-      new Set(allBlogs.map((post) => post.metadata.category ?? ""))
+      new Set(allPortfolioPosts.map((post) => post.metadata.category ?? ""))
     ),
   ];
-  const selectedTag = searchParams.tag || "All";
-  const currentPage = parseInt(searchParams.page || "1", 10);
+  const selectedTag = tag;
+  const currentPage = parseInt(page, 10);
 
   // Filter blogs based on the selected tag
-  const filteredBlogs =
+  const filteredPortfolioPosts =
     selectedTag === "All"
-      ? allBlogs
-      : allBlogs.filter((post) => post.metadata.category === selectedTag);
+      ? allPortfolioPosts
+      : allPortfolioPosts.filter((post) => post.metadata.category === selectedTag);
 
   // Sort blogs by date
-  const sortedBlogs = filteredBlogs.sort((a, b) => {
+  const sortedPortfolioPosts = filteredPortfolioPosts.sort((a, b) => {
     if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
       return -1;
     }
@@ -53,10 +47,10 @@ export default function Portfolio({ searchParams }: {
   });
 
   // Calculate total pages
-  const totalPages = Math.ceil(sortedBlogs.length / POSTS_PER_PAGE);
+  const totalPages = Math.ceil(sortedPortfolioPosts.length / POSTS_PER_PAGE);
 
   // Get blogs for current page
-  const paginatedBlogs = sortedBlogs.slice(
+  const paginatedPortfolioPosts = sortedPortfolioPosts.slice(
     (currentPage - 1) * POSTS_PER_PAGE,
     currentPage * POSTS_PER_PAGE
   );
@@ -68,9 +62,9 @@ export default function Portfolio({ searchParams }: {
         <FilterList selectedTag={selectedTag} blogTags={blogTags} />
         <FilterSelectBox selectedTag={selectedTag} blogTags={blogTags} />
         <ul className="project-list">
-          {paginatedBlogs.map((post, index) => (
+          {paginatedPortfolioPosts.map((post, index) => (
             <li
-              key={index}
+              key={post.slug} // Avoid using index for keys
               className="project-item active"
               data-category={post.metadata.category}
             >
@@ -85,8 +79,9 @@ export default function Portfolio({ searchParams }: {
                     width={1600}
                     height={900}
                     priority={true}
-                    placeholder="empty"
+                    placeholder="blur"
                     loading="eager"
+                    blurDataURL="https://docs.1chooo.com/images/cover-with-1chooo-com.png"
                   />
                 </figure>
                 <h3 className="project-title"><MarkdownRenderer content={post.metadata.title} /></h3>
@@ -95,23 +90,12 @@ export default function Portfolio({ searchParams }: {
             </li>
           ))}
         </ul>
-        <div className="pagination">
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-            (pageNum) => (
-              <Link
-                key={pageNum}
-                href={{
-                  pathname: "/portfolio",
-                  query: { ...searchParams, page: pageNum.toString() },
-                }}
-                className={`pagination-btn ${pageNum === currentPage ? "active" : ""
-                  }`}
-              >
-                {pageNum}
-              </Link>
-            )
-          )}
-        </div>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          selectedTag={selectedTag}
+          basePath="/portfolio"
+        />
       </section>
     </article>
   );

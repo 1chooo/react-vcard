@@ -1,7 +1,3 @@
-time {
-    display: block;
-}
-
 .contacts-list {
     display: grid;
     grid-template-columns: 1fr;
@@ -20,24 +16,9 @@ time {
     width: calc(100% - 46px);
 }
 
-.contact-info a {
-    display: block;
-}
-
 .contact-info :is(.contact-link, time, address) {
     color: var(--white-2);
     font-size: var(--fs-7);
-}
-
-.contact-info address {
-    font-style: normal;
-}
-
-.contact-title {
-    color: var(--light-gray-70);
-    font-size: var(--fs-8);
-    text-transform: uppercase;
-    margin-bottom: 2px;
 }
 
 @media (min-width: 580px) {

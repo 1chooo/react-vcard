@@ -33,7 +33,7 @@ const Paragraph: React.FC<ParagraphProps> = (props) => {
     return <>{children}</>;
   }
 
-  return <p {...rest}>{children}</p>;
+  return <p {...rest} className="mb-4">{children}</p>;
 };
 
 export default Paragraph;

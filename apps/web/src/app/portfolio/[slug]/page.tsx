@@ -8,10 +8,12 @@ import { getPortfolioPosts } from '@/lib/db/portfolio';
 
 import "@/styles/blog/blog-text.css"
 
-export async function generateMetadata({ params }: {
-  readonly params: { readonly slug: string };
-}): Promise<Metadata | undefined> {
-  let post = getPortfolioPosts().find((post) => post.slug === params.slug);
+type tParams = Promise<{ slug: string }>;
+
+export async function generateMetadata({ params }: { params: tParams }): Promise<Metadata | undefined> {
+  const { slug } = await params;
+  let posts = await getPortfolioPosts();
+  let post = posts.find((post) => post.slug === slug);
   if (!post) {
     return;
   }
@@ -97,10 +99,10 @@ function formatDate(date: string) {
   }
 }
 
-export default function Portfolio({ params }: {
-  readonly params: { readonly slug: string }
-}) {
-  let post = getPortfolioPosts().find((post) => post.slug === params.slug);
+export default async function Portfolio(props: { params: tParams }) {
+  const { slug } = await props.params;
+  let posts = await getPortfolioPosts();
+  let post = posts.find((post) => post.slug === slug);
 
   if (!post) {
     notFound();
@@ -111,7 +113,7 @@ export default function Portfolio({ params }: {
       <article>
         <section className="blog-text">
           <PageHeader header="Hugo's Portfolio" />
-          <h1 className="title font-medium text-2xl tracking-tighter max-w-[650px]">
+          <h1 className="title font-semibold text-2xl font-text-2xl tracking-tighter max-w-[650px]">
             <MarkdownRenderer content={post.metadata.title} />
           </h1>
           <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">

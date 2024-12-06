@@ -1,6 +1,7 @@
 import React from 'react';
-import slugify from '@/lib/utils/slugify';
-import { IoLink } from "react-icons/io5";
+import slugify from '@/lib/slugify';
+
+import { IoLink } from 'react-icons/io5';
 
 interface HeaderProps {
   level: 1 | 2 | 3 | 4 | 5 | 6;
@@ -8,34 +9,43 @@ interface HeaderProps {
 }
 
 const AnchorHeader: React.FC<HeaderProps> = ({ level, children, ...props }) => {
-  const Tag = `h${level}` as keyof JSX.IntrinsicElements; // Dynamically choose the header tag
-  const id = slugify(children?.toString() ?? '', { lower: true });
+  let Tag = `h${level}` as keyof JSX.IntrinsicElements;
+  let id = slugify(children?.toString() ?? '', { lower: true });
 
-  const getMargins = (level: number) => {
+  let getMargins = (level: number) => {
     switch (level) {
       case 1:
-        return { marginTop: '3.0rem', marginBottom: '2.0rem' };
+        return 'text-3xl font-bold mt-14 mb-10';
       case 2:
-        return { marginTop: '2.5rem', marginBottom: '1.5rem' };
+        return 'text-2xl font-semibold mt-12 mb-8';
       case 3:
-        return { marginTop: '2.0rem', marginBottom: '1.0rem' };
+        return 'text-xl font-medium mt-10 mb-6';
       case 4:
-        return { marginTop: '1.5rem', marginBottom: '0.8rem' };
+        return 'text-lg font-medium mt-8 mb-4';
       case 5:
-        return { marginTop: '1.2rem', marginBottom: '0.6rem' };
+        return 'text-base font-medium mt-6 mb-3';
       case 6:
-        return { marginTop: '1.0rem', marginBottom: '0.5rem' };
+        return 'text-sm font-medium mt-4 mb-2';
       default:
-        return {};
+        return '';
     }
   };
 
-  const margins = getMargins(level);
+  let margins = getMargins(level);
 
   return (
-    <Tag id={id} className="anchor-header" style={margins} {...props}>
-      <a href={`#${id}`}>
-        <span className="hash"><IoLink /></span>
+    <Tag
+      id={id}
+      className={`relative group cursor-pointer ${margins}`}
+      {...props}
+    >
+      <a
+        href={`#${id}`}
+        className="no-underline text-[#d6d6d6] hover:underline flex items-center"
+      >
+        <span className="absolute left-[-1.5rem] top-[0.2rem] opacity-0 transition-opacity duration-200 ease-in-out scale-90 group-hover:opacity-100">
+          <IoLink />
+        </span>
       </a>
       {children}
     </Tag>

@@ -1,3 +1,5 @@
+// reference: https://github.com/vercel/next.js/blob/canary/packages/third-parties/src/google/ga.tsx
+
 'use client'
 // TODO: Evaluate import 'client only'
 import React, { useEffect } from 'react'

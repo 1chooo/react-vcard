@@ -27,13 +27,3 @@
 .timeline-text ol li ol li ol li {
     list-style: lower-roman;
 }
-
-.timeline-text a {
-    color: var(--orange-yellow-crayola);
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-.timeline-text a:hover {
-    text-decoration-color: hsla(0, 0%, 84%, 0.7);
-}

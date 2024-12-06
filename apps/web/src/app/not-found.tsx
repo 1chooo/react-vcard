@@ -6,7 +6,6 @@ import PageContent from '@/components/page-content';
 import MarkdownRenderer from '@/components/markdown/markdown-renderer';
 import config from '@/config';
 
-import '@/styles/about/about-text.css';
 
 const { title } = config;
 
@@ -31,7 +30,7 @@ const NotFound: React.FC = () => {
       page="404"
       pathName={pathname}
     >
-      <section className="about-text">
+      <section className="text-light-gray leading-relaxed">
         {renderErrorMessage()}
       </section>
     </PageContent>

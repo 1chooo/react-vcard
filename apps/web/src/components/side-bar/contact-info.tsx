@@ -8,7 +8,7 @@ interface ContactInfoProps {
 const ContactInfo: React.FC<ContactInfoProps> = ({ title, children }) => {
   return (
     <div className="contact-info">
-      <p className="contact-title">{title}</p>
+      <p className="text-light-gray-70 uppercase mb-1 text-xs	">{title}</p>
       {children}
     </div>
   );

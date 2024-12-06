@@ -1,10 +1,26 @@
 // https://github.com/sleepymalc/pbb.wtf/blob/main/config.js
+// https://react-icons.github.io/react-icons/
+// https://primer.style/foundations/icons/
 
 import { Config } from "@/types/config";
-import { MdOutlineDevices } from "react-icons/md";
+import { MdOutlineDevices, MdAttachment } from "react-icons/md";
 import { IoSchoolOutline } from "react-icons/io5";
-import { PiTrophy } from "react-icons/pi";
-import { PiBooks } from "react-icons/pi";
+import { PiTrophy, PiBooks, PiMediumLogoBold } from "react-icons/pi";
+import { GoalIcon } from '@primer/octicons-react'
+import { LuGithub, LuPencil, LuLinkedin, LuRss } from "react-icons/lu";
+import {
+  TbBrandCpp, TbBrandTypescript,
+  TbBrandGolang, TbBrandNextjs,
+  TbPhotoSquareRounded, TbBrandDocker, TbBrandMysql,
+} from "react-icons/tb";
+import { FaReact, FaAws } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { AiOutlinePython } from "react-icons/ai";
+import { RiJavaLine } from "react-icons/ri";
+import { SiLatex, SiFastapi } from "react-icons/si";
+import { BiLogoFlask } from "react-icons/bi";
+import { VscTerminalLinux } from "react-icons/vsc";
+import { DiRedis } from "react-icons/di";
 
 const config: Config = {
   avatar: '/images/profile.webp',
@@ -13,6 +29,7 @@ const config: Config = {
   author: "Chun-Ho (Hugo) Lin - 1chooo",
   keywords: ["Hugo ChunHo Lin", "1chooo", "Software Engineering", "Next.js", "React"],
   status: "Day ONE ⚡️",
+  siteURL: "https://1chooo.com",
   openGraph: {
     url: "https://1chooo.com/",
     type: "website",
@@ -32,8 +49,16 @@ const config: Config = {
     { path: '/', label: 'About' },
     { path: '/resume', label: 'Resume' },
     { path: '/portfolio', label: 'Portfolio' },
-    { path: '/blog', label: 'Blog' },
-    { path: '/contact', label: 'Contact' }
+    { path: '/post', label: 'Post' },
+    { path: '/gallery', label: 'Gallery' },
+  ],
+  socialLinks: [
+    { url: `https://github.com/1chooo`, icon: LuGithub, name: 'GitHub' },
+    { url: `https://www.linkedin.com/in/1chooo/`, icon: LuLinkedin, name: 'LinkedIn' },
+    { url: `https://medium.com/@1chooo`, icon: PiMediumLogoBold, name: 'Medium' },
+    { url: `https://twitter.com/1chooo___`, icon: FaXTwitter, name: 'Twitter' },
+    { url: `/rss.xml`, icon: LuRss, name: 'RSS Feed' },
+    { url: `/cv.pdf`, icon: MdAttachment, name: 'CV' },
   ],
   about: {
     "subHeader": "$ ls -al Hugo 👨🏻‍💻",
@@ -43,65 +68,55 @@ const config: Config = {
     "preferredName": "Hugo",
     "additionalName": "Hugo",
     "pronouns": 'He/Him',
-    "socialMedia": {
-      "githubUsername": "1chooo",
-      "mediumUsername": "1chooo",
-      "twitterUsername": "1chooo___",
-      "linkedinUsername": "1chooo"
-    },
+    "githubUsername": "1chooo",
     "introduction": `
 I obtained my Bachelor's degree from [National Central University 🐿️](https://www.ncu.edu.tw/), driven by a *sincere passion* for **Software Engineering 💻.**
 
 My current research interests include ***Programming Language Theory, Operating Systems, and Compilers.*** To gain practical experience, I developed my own ***<a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">Lisp</a>*** interpreter using **<a href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a>** <sup>[[Code](https://github.com/1chooo/compiler-101)]</sup> and implemented [***Monkey Programming***](https://monkeylang.org/) Compiler with **<a href="https://go.dev/">GO</a>** <sup>[[Code](https://github.com/1chooo/monkey-prog-lang)]</sup>.
 
-I will apply for Master's programs in Computer Science/Software Engineering for 2024-25 cycle. Here is my current [CV](/resume) <sup>[[Docs](/cv.pdf)]</sup> (October 2024).
-
 In my spare time, I do workouts 💪🏻, street photography 📸, and tech content writing ✍🏻.
 
-**<code>Self-motivated, Team player, Love coding 👨🏻‍💻</code>**
+**Self-motivated, Team player, Love coding 👨🏻‍💻**
     `,
     "lifestyles": [
       {
-        icon: '/images/icons/developer.png',
-        title: "Open Source Contributor",
+        icon: LuGithub,
+        title: "Open Source",
         text: "Actively contributing to open source projects on GitHub."
       },
       {
-        icon: '/images/icons/writing.png',
-        title: "Content Creator",
+        icon: LuPencil,
+        title: "Storytelling",
         text: "Love to share my knowledge and experience with others."
       },
       {
-        icon: '/images/icons/dumbbell.png',
+        icon: GoalIcon,
         title: "Workouts",
         text: "Basketball and weight training defines my active workout lifestyle."
       },
       {
-        icon: '/images/icons/camera.png',
+        icon: TbPhotoSquareRounded,
         title: "Photography",
         text: "Sky brings freedom; streets, a reminder of others' contributions."
       }
     ],
-    "programmingLanguage": [
-      { id: 'python', src: 'https://skillicons.dev/icons?i=python', alt: 'python' },
-      { id: 'ts', src: 'https://skillicons.dev/icons?i=ts', alt: 'ts' },
-      { id: 'go', src: 'https://skillicons.dev/icons?i=go', alt: 'go' },
-      { id: 'cpp', src: 'https://skillicons.dev/icons?i=cpp', alt: 'cpp' },
-      { id: 'java', src: 'https://skillicons.dev/icons?i=java', alt: 'java' },
-      { id: 'md', src: 'https://skillicons.dev/icons?i=md', alt: 'md' },
-      { id: 'bash', src: 'https://skillicons.dev/icons?i=bash', alt: 'bash' },
-      { id: 'latex', src: 'https://skillicons.dev/icons?i=latex', alt: 'latex' },
+    "techStacks": [
+      { name: "Python", icon: AiOutlinePython },
+      { name: "TypeScript", icon: TbBrandTypescript },
+      { name: "Go", icon: TbBrandGolang },
+      { name: "C++", icon: TbBrandCpp },
+      { name: "Java", icon: RiJavaLine },
+      { name: "LaTeX", icon: SiLatex },
+      { name: "Linux", icon: VscTerminalLinux },
+      { name: "MySQL", icon: TbBrandMysql },
+      { name: "Redis", icon: DiRedis },
+      { name: "React", icon: FaReact },
+      { name: "Next.js", icon: TbBrandNextjs },
+      { name: "AWS", icon: FaAws },
+      { name: "Docker", icon: TbBrandDocker },
+      { name: "FastAPI", icon: SiFastapi },
+      { name: "Flask", icon: BiLogoFlask },
     ],
-    "devOps": [
-      { id: 'linux', src: 'https://skillicons.dev/icons?i=linux', alt: 'linux' },
-      { id: 'aws', src: 'https://skillicons.dev/icons?i=aws', alt: 'aws' },
-      { id: 'fastapi', src: 'https://skillicons.dev/icons?i=fastapi', alt: 'fastapi' },
-      { id: 'react', src: 'https://skillicons.dev/icons?i=react', alt: 'react' },
-      { id: 'nextjs', src: 'https://skillicons.dev/icons?i=nextjs', alt: 'nextjs' },
-      { id: 'flask', src: 'https://skillicons.dev/icons?i=flask', alt: 'flask' },
-      { id: 'docker', src: 'https://skillicons.dev/icons?i=docker', alt: 'docker' },
-      { id: 'githubactions', src: 'https://skillicons.dev/icons?i=githubactions', alt: 'githubactions' },
-    ]
   },
   resume: {
     "educations": {
@@ -221,7 +236,9 @@ In my spare time, I do workouts 💪🏻, street photography 📸, and tech cont
     theme: "dark_tritanopia",
     lang: "en",
     loading: "lazy",
-  }
+  },
+  "googleAnalyticId": "G-JGG75799PJ",
+  "googleTagManagerId": "GTM-PDJ3NF4Q"
 };
 
 export default config;
