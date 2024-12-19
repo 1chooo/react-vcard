@@ -1,6 +1,7 @@
 import React from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
 interface CodeBlockProps {
   language: string;
   children: React.ReactNode;
@@ -14,18 +15,20 @@ interface CodeBlockProps {
  * TODO: diff
  * https://react-syntax-highlighter.github.io/react-syntax-highlighter/demo/diff.html
  */
-const CodeBlock: React.FC<CodeBlockProps> = ({ language, children }) => (
-  <SyntaxHighlighter
-    style={oneDark}
-    PreTag="div"
-    language={language}
-    // wrapLongLines={true}
-    showLineNumbers={true}
-    // wrapLines={true}
-    showInlineLineNumbers={true}
-  >
-    {String(children).trimEnd()}
-  </SyntaxHighlighter>
-);
+function CodeBlock({ language, children }: CodeBlockProps) {
+  return (
+    <SyntaxHighlighter
+      style={oneDark}
+      PreTag="div"
+      language={language}
+      // wrapLongLines={true}
+      showLineNumbers={true}
+      // wrapLines={true}
+      showInlineLineNumbers={true}
+    >
+      {String(children).trimEnd()}
+    </SyntaxHighlighter>
+  )
+};
 
 export default CodeBlock;

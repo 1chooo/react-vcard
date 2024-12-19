@@ -1,6 +1,5 @@
-// reference: https://github.com/vercel/next.js/blob/canary/packages/third-parties/src/google/gtm.tsx
-
 'use client'
+// https://github.com/vercel/next.js/commit/6f64af6e66fadcb27b4db0facc1b402378a927b2
 // TODO: Evaluate import 'client only'
 import React, { useEffect } from 'react'
 import Script from 'next/script'
@@ -57,6 +56,7 @@ export function GoogleTagManager(props: GTMParams) {
         id="_next-gtm"
         data-ntpc="GTM"
         src={`${gtmScriptUrl}?id=${gtmId}${gtmLayer}${gtmAuth}${gtmPreview}`}
+        nonce={nonce}
       />
     </>
   )

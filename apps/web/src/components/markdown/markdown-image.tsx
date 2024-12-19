@@ -8,7 +8,7 @@ interface MarkdownImageProps {
   alt?: string;
 }
 
-const MarkdownImage: React.FC<MarkdownImageProps> = ({ src, alt }) => {
+function MarkdownImage({ src, alt }: MarkdownImageProps) {
   const [imageSize, setImageSize] = useState({ width: 1, height: 1 });
 
   return (

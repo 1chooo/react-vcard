@@ -1,5 +1,5 @@
-import { getBlogPosts } from '@/lib/db/blog';
-import { getPortfolioPosts } from '@/lib/db/portfolio';
+import { getBlogPosts } from '@/lib/db/v1/post';
+import { getPortfolioPosts } from '@/lib/db/v1/portfolio';
 
 /**
  * This function returns an array of objects with the URL and last modified date
@@ -26,7 +26,7 @@ export default async function sitemap() {
     '/resume',
     '/portfolio',
     '/post',
-    // '/contact'
+    '/gallery'
   ].map((route) => ({
     url: `https://1chooo.com${route}`,
     lastModified: new Date().toISOString().split('T')[0],

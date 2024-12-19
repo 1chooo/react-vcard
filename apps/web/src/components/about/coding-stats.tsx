@@ -3,7 +3,8 @@ import AboutHeader from "@/components/about/about-header";
 import type { Icon } from '@primer/octicons-react';
 import type { IconType } from 'react-icons';
 import Globe from "@/components/about/globe";
-import GitHubStats from "@/components/about/github-stats";
+import GitHubCalendar from 'react-github-calendar';
+import { ThemeInput } from 'react-activity-calendar';
 
 import "@/styles/about/tech-stack.css";
 
@@ -12,11 +13,21 @@ type TechStack = {
   icon: Icon | IconType;
 };
 
-type TechStackProps = {
+interface CodingStatsProps {
   techStacks: TechStack[];
-};
+  githubUsername: string;
+}
 
-const CodingStats: React.FC<TechStackProps> = ({ techStacks }) => {
+/**
+ * @link
+ * https://grubersjoe.github.io/react-activity-calendar/
+ */
+function CodingStats({ techStacks, githubUsername }: CodingStatsProps) {
+  const yellowTheme: ThemeInput = {
+    light: ['hsl(0, 0%, 92%)', '#FFDA6B'],
+    dark: ['hsl(0, 0%, 22%)', '#FFDA6B'],
+  };
+
   return (
     <section>
       <AboutHeader text="$ ls -al Coding Stats" />
@@ -24,8 +35,11 @@ const CodingStats: React.FC<TechStackProps> = ({ techStacks }) => {
         <li className="service-item">
           <div className="tech-stack-container">
             {techStacks.map((stack) => (
-              <div key={stack.name} className="tech-icon text-white-2 hover:scale-110 hover:text-orange-yellow-crayola">
-                <stack.icon />
+              <div
+                key={stack.name}
+                className="flex flex-col items-center justify-center text-3xl text-white-2 hover:scale-110 hover:text-orange-yellow-crayola"
+              >
+                {React.createElement(stack.icon as React.ElementType)}
               </div>
             ))}
           </div>
@@ -34,7 +48,18 @@ const CodingStats: React.FC<TechStackProps> = ({ techStacks }) => {
           <Globe />
         </li>
       </ul>
-      <GitHubStats />
+      <section className="text-light-gray mt-5">
+        <GitHubCalendar
+          username={githubUsername}
+          blockSize={12}
+          blockMargin={4}
+          colorScheme="dark"
+          blockRadius={2}
+          fontSize={14}
+          style={{ fontWeight: 'bold' }}
+          theme={yellowTheme}
+        />
+      </section>
     </section>
   );
 };

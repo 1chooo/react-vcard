@@ -26,15 +26,6 @@
   padding: 10px;
 }
 
-.tech-icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  /* Adjust icon size */
-}
-
 .icon-label {
   margin-top: 5px;
   font-size: 0.8rem;

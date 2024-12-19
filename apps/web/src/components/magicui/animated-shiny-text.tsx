@@ -8,6 +8,9 @@ interface AnimatedShinyTextProps {
   shimmerWidth?: number;
 }
 
+/**
+ * @link https://magicui.design/docs/components/animated-shiny-text
+ */
 const AnimatedShinyText: FC<AnimatedShinyTextProps> = ({
   children,
   className,

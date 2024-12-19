@@ -11,27 +11,29 @@ export interface TimelineItemProps {
   tasksMarkdown: string;
 }
 
-const TimelineItem: React.FC<TimelineItemProps> = ({
+function TimelineItem({
   company,
   location,
   role,
   duration,
   tasksMarkdown,
-}) => (
-  <li className="timeline-item">
-    <h4 className="text-white-2 font-bold leading-[1.3] mb-2">
-      {company}
-      <span>📍 {location}</span>
-    </h4>
-    <p className="text-orange-yellow-crayola inline">
-      {role}
-      <span className="text-white-1 float-right">🗓️ {duration}</span>
-    </p>
-    <br />
-    <div className="timeline-text">
-      <MarkdownRenderer content={tasksMarkdown} />
-    </div>
-  </li>
-);
+}: TimelineItemProps) {
+  return (
+    <li className="timeline-item">
+      <h4 className="text-white-2 font-bold leading-[1.3] mb-2">
+        {company}
+        <span>📍 {location}</span>
+      </h4>
+      <p className="text-orange-yellow-crayola inline">
+        {role}
+        <span className="text-white-1 float-right">🗓️ {duration}</span>
+      </p>
+      <br />
+      <div className="timeline-text">
+        <MarkdownRenderer content={tasksMarkdown} />
+      </div>
+    </li>
+  );
+};
 
 export default TimelineItem;

@@ -4,7 +4,13 @@ import { useEffect, useState } from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-const SkeletonBlogLoader = ({ children }: { children: React.ReactNode }) => {
+interface SkeletonBlogLoaderProps {
+  children: React.ReactNode;
+}
+
+function SkeletonBlogLoader({
+  children
+}: SkeletonBlogLoaderProps) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

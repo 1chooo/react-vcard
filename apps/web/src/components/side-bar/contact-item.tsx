@@ -10,7 +10,9 @@ interface ContactItemProps {
   children: React.ReactNode;
 }
 
-const ContactItem: React.FC<ContactItemProps> = ({ icon, title, children }) => {
+function ContactItem({
+  icon, title, children
+}: ContactItemProps) {
   return (
     <li className="contact-item">
       <IconBox icon={icon} />

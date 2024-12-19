@@ -5,11 +5,11 @@ interface ServiceItemProps {
   lifestyle: LifeStyle;
 }
 
-const ServiceItem: React.FC<ServiceItemProps> = ({ lifestyle }) => {
+function ServiceItem({ lifestyle }: ServiceItemProps) {
   return (
     <li className="service-item">
       <div className="mb-2.5 sm:mb-0 sm:mt-2 flex justify-center items-center">
-        <lifestyle.icon className="text-orange-yellow-crayola" size={24}/>
+        <lifestyle.icon className="text-orange-yellow-crayola" size={24} />
       </div>
 
       <div className="text-center sm:text-left">

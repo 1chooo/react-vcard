@@ -1,14 +1,14 @@
 import React from "react";
+import Link from "next/link";
 import { HiOutlineMail } from "react-icons/hi";
 import { IoCalendarOutline } from "react-icons/io5";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { TbPhoneCalling } from "react-icons/tb";
-import ContactItem from "./contact-item";
-import Link from "next/link";
+import ContactItem from "@/components/side-bar/contact-item";
 
 import "@/styles/side-bar/contact-list.css";
 
-const ContactsList: React.FC = () => {
+function ContactsList({ }) {
   return (
     <ul className="contacts-list">
       <ContactItem icon={HiOutlineMail} title="Email">

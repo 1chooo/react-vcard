@@ -6,13 +6,13 @@ import { useSpring } from 'react-spring';
 import { LuMapPin } from "react-icons/lu";
 
 // https://github.com/shuding/cobe/tree/main/website/pages/docs/showcases
-const Globe: React.FC = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-  const pointerInteracting = useRef<number | null>(null)
-  const pointerInteractionMovement = useRef(0)
-  const fadeMask = 'radial-gradie</div>nt(circle at 50% 50%, rgb(0, 0, 0) 60%, rgb(0, 0, 0, 0) 70%)'
+function Globe({ }) {
+  let canvasRef = useRef<HTMLCanvasElement>(null)
+  let pointerInteracting = useRef<number | null>(null)
+  let pointerInteractionMovement = useRef(0)
+  let fadeMask = 'radial-gradie</div>nt(circle at 50% 50%, rgb(0, 0, 0) 60%, rgb(0, 0, 0, 0) 70%)'
 
-  const [{ r }, api] = useSpring(() => ({
+  let [{ r }, api] = useSpring(() => ({
     r: 0,
     config: {
       mass: 1,
@@ -25,7 +25,7 @@ const Globe: React.FC = () => {
   useEffect(() => {
     let width = 0;
 
-    const onResize = () => {
+    let onResize = () => {
       if (canvasRef.current && (width = canvasRef.current.offsetWidth)) {
         window.addEventListener('resize', onResize);
       }
@@ -33,7 +33,7 @@ const Globe: React.FC = () => {
     onResize();
 
     if (!canvasRef?.current) return;
-    const globe = createGlobe(canvasRef.current, {
+    let globe = createGlobe(canvasRef.current, {
       devicePixelRatio: 2,
       width: width * 2,
       height: width * 2,
@@ -103,7 +103,7 @@ const Globe: React.FC = () => {
             }}
             onMouseMove={(e) => {
               if (pointerInteracting.current !== null) {
-                const delta = e.clientX - pointerInteracting.current
+                let delta = e.clientX - pointerInteracting.current
                 pointerInteractionMovement.current = delta
                 void api.start({
                   r: delta / 200
@@ -112,7 +112,7 @@ const Globe: React.FC = () => {
             }}
             onTouchMove={(e) => {
               if (pointerInteracting.current !== null && e.touches[0]) {
-                const delta = e.touches[0].clientX - pointerInteracting.current
+                let delta = e.touches[0].clientX - pointerInteracting.current
                 pointerInteractionMovement.current = delta
                 void api.start({
                   r: delta / 100

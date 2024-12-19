@@ -4,7 +4,7 @@ import type { IconType } from "react-icons";
 
 interface SocialLink {
   url: string;
-  icon: Icon | IconType | React.FC;
+  icon: Icon | IconType;
   name: string;
 }
 
@@ -12,14 +12,14 @@ interface SocialListProps {
   socialLinks: SocialLink[];
 }
 
-const SocialList: React.FC<SocialListProps> = ({ socialLinks }) => {
+function SocialList({ socialLinks }: SocialListProps) {
   return (
-    <ul className="social-list">
+    <ul className="flex justify-start items-center gap-[15px] pb-1 pl-[7px] xl:justify-center md:justify-center">
       {socialLinks.map(({ url, icon: Icon, name }) => (
-        <li className="social-item" key={name}>
+        <li key={name}>
           <Link
             href={url}
-            className="social-link"
+            className="text-light-gray-70 text-lg hover:scale-110 hover:text-orange-yellow-crayola"
             target="_blank"
             rel="noopener noreferrer"
             aria-label={name}
@@ -30,7 +30,7 @@ const SocialList: React.FC<SocialListProps> = ({ socialLinks }) => {
       ))}
     </ul>
   );
-}
+};
 
 export default SocialList;
 

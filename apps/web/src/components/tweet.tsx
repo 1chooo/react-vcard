@@ -8,7 +8,7 @@ import {
 } from 'react-tweet';
 import '@/styles/tweet.css';
 
-const TweetContent = async ({ id, components, onError }: TweetProps) => {
+async function TweetContent({ id, components, onError }: TweetProps) {
   let error;
   const tweet = id
     ? await getTweet(id).catch((err) => {
@@ -31,6 +31,10 @@ const TweetContent = async ({ id, components, onError }: TweetProps) => {
 
 export const ReactTweet = (props: TweetProps) => <TweetContent {...props} />;
 
+/**
+ * @example
+ * <Tweet id="1457032789883187201" />
+ */
 export async function Tweet({ id }: { id: string }) {
   return (
     <div className="tweet my-6 text-light-gray">
@@ -43,5 +47,3 @@ export async function Tweet({ id }: { id: string }) {
   );
 }
 
-// Usage
-// <Tweet id="1457032789883187201" />

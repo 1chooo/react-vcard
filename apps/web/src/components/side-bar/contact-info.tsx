@@ -5,7 +5,7 @@ interface ContactInfoProps {
   children: React.ReactNode;
 }
 
-const ContactInfo: React.FC<ContactInfoProps> = ({ title, children }) => {
+function ContactInfo({ title, children }: ContactInfoProps) {
   return (
     <div className="contact-info">
       <p className="text-light-gray-70 uppercase mb-1 text-xs	">{title}</p>

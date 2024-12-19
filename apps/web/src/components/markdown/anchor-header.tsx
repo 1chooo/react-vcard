@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { JSX } from 'react';
 import slugify from '@/lib/slugify';
 
 import { IoLink } from 'react-icons/io5';
@@ -8,7 +8,7 @@ interface HeaderProps {
   children: React.ReactNode;
 }
 
-const AnchorHeader: React.FC<HeaderProps> = ({ level, children, ...props }) => {
+function AnchorHeader ({ level, children, ...props }: HeaderProps) {
   let Tag = `h${level}` as keyof JSX.IntrinsicElements;
   let id = slugify(children?.toString() ?? '', { lower: true });
 

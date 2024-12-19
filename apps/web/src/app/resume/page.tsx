@@ -22,10 +22,9 @@ const education = <TimeLine data={educations} />;
 const awardLeadership = <TimeLine data={awardLeaderships} />;
 const teachingExp = <TimeLine data={teachingExperiences} />;
 
-const Resume = () => {
-
+function Resume({ }) {
   return (
-    <article data-page=''>
+    <article>
       <PageHeader header="Hugo's Resume" />
       <DownloadCV />
       {profExp}

@@ -3,7 +3,7 @@
 import Giscus from "@giscus/react";
 import type { GiscusProps } from "@giscus/react";
 
-const Comments: React.FC<{ giscusConfig: GiscusProps }> = ({ giscusConfig }) => {
+function Comments({ giscusConfig }: { giscusConfig: GiscusProps }) {
   return (
     <Giscus
       id={giscusConfig.id}

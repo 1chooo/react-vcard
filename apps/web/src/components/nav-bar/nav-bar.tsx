@@ -1,15 +1,15 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import config from '@/config';
+import { ProgressBarLink } from "@/components/progress-bar";
 
 import '@/styles/nav-bar.css'
 
 const navItems = config.navItems;
 
-export const NavBar: React.FC = () => {
+function NavBar({ }) {
   const pathname = usePathname();
 
   const isActive = (path: string) => {
@@ -22,18 +22,20 @@ export const NavBar: React.FC = () => {
 
   return (
     <nav className="navbar">
-      <ul className="navbar-list">
+      <ul className="navbar-list flex flex-wrap justify-center">
         {navItems.map(item => (
           <li key={item.path} className="navbar-item">
-            <Link
+            <ProgressBarLink
               href={item.path}
-              className={`navbar-link ${isActive(item.path) ? 'active' : ''}`}
+              className={`navbar-link text-light-gray ${isActive(item.path) ? 'active' : ''}`}
             >
               {item.label}
-            </Link>
+            </ProgressBarLink>
           </li>
         ))}
       </ul>
     </nav>
   );
 }
+
+export default NavBar;

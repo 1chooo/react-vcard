@@ -1,8 +1,8 @@
-import Link from "next/link";
 import React from 'react';
 import type { IconType as ReactIconType } from "react-icons";
 import type { Icon as OcticonsType } from "@primer/octicons-react";
 import { sendGTMEvent } from "@/components/google";
+import { ProgressBarLink } from "@/components/progress-bar";
 
 interface SeeMoreButtonProps {
   badge: string;
@@ -11,17 +11,21 @@ interface SeeMoreButtonProps {
 }
 
 // TODO: customize button onclick effect https://articles.readytowork.jp/google-analytics-in-next-js-a26cc2b28db5
-const SeeMoreButton: React.FC<SeeMoreButtonProps> = ({ badge, path, icon: Icon }) => {
+function SeeMoreButton({
+  badge,
+  path,
+  icon: Icon
+}: SeeMoreButtonProps) {
   return (
     <div className="flex justify-center">
-      <Link href={path}>
+      <ProgressBarLink href={path}>
         <button
           className="hover:scale-105 active:scale-95 rounded-xl shadow-lg bg-border-gradient-onyx hover:bg-orange-yellow-crayola-dark z-0 cursor-pointer text-orange-yellow-crayola px-5 py-3 font-bold"
           onClick={() => sendGTMEvent({ event: 'buttonClicked', value: 'GTM-PDJ3NF4Q' })}>
           <span>{badge}</span>
-          <Icon className="ml-2 group-hover:ml-2 group-hover:scale-110"/>
+          <Icon className="ml-2 group-hover:ml-2 group-hover:scale-110" />
         </button>
-      </Link>
+      </ProgressBarLink>
     </div>
   );
 }

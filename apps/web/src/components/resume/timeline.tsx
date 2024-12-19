@@ -9,18 +9,14 @@ interface TimeLineProps {
   data: ProfessionalExperience | Education | AwardLeaderships | TeachingExperience;
 }
 
-const TimeLine: React.FC<TimeLineProps> = ({ data }) => {
-
+function TimeLine({ data }: TimeLineProps) {
   const { icon } = data;
   const { title } = data;
   const { items } = data;
 
   return (
     <section className="timeline">
-      <IconTitle
-        icon={icon}
-        title={title}
-      />
+      <IconTitle icon={icon} title={title} />
       <TimelineList items={items} />
     </section>
   );

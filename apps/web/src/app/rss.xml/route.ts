@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server'
 import RSS from "@/lib/rss";
-import { getBlogPosts } from '@/lib/db/blog';
-import { getPortfolioPosts } from '@/lib/db/portfolio';
+import { getBlogPosts } from '@/lib/db/v1/post';
+import { getPortfolioPosts } from '@/lib/db/v1/portfolio';
 import config from '@/config';
 
 const { title, description, author } = config;
 
-export const GET = async () => {
+export async function GET() {
   const feed = new RSS({
     title: title,
     description: description,

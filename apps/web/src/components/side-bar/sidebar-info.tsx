@@ -12,12 +12,14 @@ interface SideBarInfoProps {
   onToggle: () => void;
 }
 
-const SideBarInfo: React.FC<SideBarInfoProps> = ({ onToggle }) => (
-  <div className="sidebar-info">
-    <AvatarBox avatar={avatar} />
-    <InfoContent />
-    <InfoMoreButton onClick={onToggle} />
-  </div>
-);
+function SideBarInfo({ onToggle }: SideBarInfoProps) {
+  return (
+    <div className="sidebar-info">
+      <AvatarBox avatar={avatar} />
+      <InfoContent />
+      <InfoMoreButton onClick={onToggle} />
+    </div>
+  );
+};
 
 export default SideBarInfo;

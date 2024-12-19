@@ -9,7 +9,7 @@ interface AnchorProps {
   [key: string]: any; // To allow any additional props
 }
 
-const Anchor: React.FC<AnchorProps> = ({ children, ...props }) => {
+function Anchor({ children, ...props }: AnchorProps) {
   const isEmpty = !children ||
     (Array.isArray(children) && children.length === 0) ||
     (typeof children === 'string' && children.trim().length === 0) ||

@@ -7,7 +7,7 @@ interface LifeStylesProps {
   lifestyles: LifeStyle[];
 }
 
-const LifeStyles: React.FC<LifeStylesProps> = ({ lifestyles }) => {
+function LifeStyles({ lifestyles }: LifeStylesProps) {
   return (
     <section>
       <AboutHeader text="$ ls -al Life Style" />
