@@ -8,7 +8,7 @@ import ContactItem from "@/components/side-bar/contact-item";
 
 import "@/styles/side-bar/contact-list.css";
 
-function ContactsList({ }) {
+function ContactsList() {
   return (
     <ul className="contacts-list">
       <ContactItem icon={HiOutlineMail} title="Email">

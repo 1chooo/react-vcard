@@ -7,7 +7,7 @@ import config from "@/config";
 
 const { socialLinks } = config;
 
-function SideBarInfoMore({ }) {
+function SideBarInfoMore() {
   return (
     <div className="sidebar-info-more">
       <div className="separator"></div>

@@ -4,9 +4,9 @@
 
 'use strict';
 
-var mime = require('mime-types');
-var xml = require('./xml');
-var fs = require('fs');
+let mime = require('mime-types');
+let xml = require('./xml');
+let fs = require('fs');
 
 
 function ifTruePush(bool, array, data) {
@@ -34,7 +34,7 @@ function getSize(filename) {
 
 function generateXML (data){
 
-    var channel = [];
+    let channel = [];
     channel.push({ title:           { _cdata: data.title } });
     channel.push({ description:     { _cdata: data.description || data.title } });
     channel.push({ link:            data.site_url || 'http://github.com/dylang/node-rss' });
@@ -65,7 +65,7 @@ function generateXML (data){
     ifTruePushArray(data.custom_elements, channel, data.custom_elements);
 
     data.items.forEach(function(item) {
-        var item_values = [
+        let item_values = [
                     { title:        { _cdata: item.title } }
                 ];
         ifTruePush(item.description, item_values, { description:  { _cdata: item.description } });
@@ -115,7 +115,7 @@ function generateXML (data){
     });
 
     //set up the attributes for the RSS feed.
-    var _attr = {
+    let _attr = {
         'xmlns:dc':         'http://purl.org/dc/elements/1.1/',
         'xmlns:content':    'http://purl.org/rss/1.0/modules/content/',
         'xmlns:atom':       'http://www.w3.org/2005/Atom',
@@ -166,7 +166,7 @@ function RSS (options, items) {
 
     this.item = function (options) {
         options = options || {};
-        var item = {
+        let item = {
             title:            options.title || 'No title',
             description:      options.description || '',
             url:              options.url,

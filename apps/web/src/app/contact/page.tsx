@@ -15,7 +15,7 @@ const { title } = config;
  * };
  */
 
-function Contact({ }) {
+function Contact() {
   useEffect(() => {
     document.title = `Contact | ${title}`;
   }, [title]);

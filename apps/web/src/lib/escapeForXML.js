@@ -1,5 +1,4 @@
-
-var XML_CHARACTER_MAP = {
+let XML_CHARACTER_MAP = {
   '&': '&amp;',
   '"': '&quot;',
   "'": '&apos;',

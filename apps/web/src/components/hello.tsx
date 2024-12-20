@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 
-function Hello({ }) {
+function Hello() {
   useEffect(() => {
     console.log(`
 Hi This is Hugo!!!

@@ -15,7 +15,7 @@ const errorMessages = [
   'If this is a mistake, [let us know](https://github.com/1chooo/1chooo.com/issues/new), and we will try to fix it!',
 ];
 
-function NotFound({ }) {
+function NotFound() {
   return (
     <article>
       <PageHeader header="404 Not Found" />

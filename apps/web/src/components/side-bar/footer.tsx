@@ -4,7 +4,7 @@ import Link from "next/link";
 import "@/styles/side-bar/footer.css";
 
 // All rights reserved and subject to the Privacy Policy and Terms and Conditions.
-function Footer({ }) {
+function Footer() {
   return (
     <footer className="footer">
       <div className="footer-copyright">

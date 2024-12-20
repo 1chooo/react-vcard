@@ -9,7 +9,7 @@ import '@/styles/nav-bar.css'
 
 const navItems = config.navItems;
 
-function NavBar({ }) {
+function NavBar() {
   const pathname = usePathname();
 
   const isActive = (path: string) => {

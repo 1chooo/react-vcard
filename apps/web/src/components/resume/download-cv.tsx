@@ -3,7 +3,7 @@ import IconBox from "../icon-box";
 import "@/styles/resume/download-cv.css";
 import Link from "next/link";
 
-function DownloadCV({ }) {
+function DownloadCV() {
   return (
     <section className="timeline">
       <div className="title-wrapper">

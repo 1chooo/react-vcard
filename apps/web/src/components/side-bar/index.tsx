@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react';
 import SideBarInfo from '@/components/side-bar/sidebar-info';
 import SideBarInfoMore from '@/components/side-bar/sidebar-info-more';
 
-function SideBar({ }) {
+function SideBar() {
   const [isActive, setIsActive] = useState(false);
   const sideBarRef = useRef<HTMLDivElement>(null);
 

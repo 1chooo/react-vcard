@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: `Gallery | ${title}`,
 };
 
-async function Gallery({ }) {
+async function Gallery() {
   return (
     <article>
       <PageHeader header="Hugo's Gallery" />
